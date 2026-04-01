@@ -15,7 +15,6 @@ import {
   contactDetails,
   courseCategories,
   enterpriseFeatures,
-  enterpriseMetrics,
   faqs,
   footerGroups,
   heroAudienceViews,
@@ -40,10 +39,7 @@ function App() {
         <PlatformBenefitsSection benefits={platformBenefits} />
         <HowItWorksSection steps={workflowSteps} />
         <LeadershipSection profiles={leadershipProfiles} />
-        <EnterpriseSection
-          features={enterpriseFeatures}
-          metrics={enterpriseMetrics}
-        />
+        <EnterpriseSection features={enterpriseFeatures} />
         <TestimonialsSection testimonials={testimonialsPlaceholders} />
         <FAQSection items={faqs} />
         <FinalCTASection contactDetails={contactDetails} />

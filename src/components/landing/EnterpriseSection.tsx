@@ -1,21 +1,14 @@
-import { AlertTriangle, ChartNoAxesColumn, FileCheck2, Layers3, UsersRound } from 'lucide-react'
+import { FileCheck2 } from 'lucide-react'
 
-import type { EnterpriseMetric } from '../../data/landingContent'
 import { SectionShell } from '../layout/SectionShell'
-import { Badge } from '../ui/Badge'
 import { SectionHeading } from '../ui/SectionHeading'
-import { StatCard } from '../ui/StatCard'
 
 interface EnterpriseSectionProps {
-  metrics: EnterpriseMetric[]
   features: string[]
 }
 
-const metricIcons = [UsersRound, ChartNoAxesColumn, Layers3, AlertTriangle]
-
 export function EnterpriseSection({
   features,
-  metrics,
 }: EnterpriseSectionProps) {
   return (
     <SectionShell id="empresas" surface="muted" className="section-grid">

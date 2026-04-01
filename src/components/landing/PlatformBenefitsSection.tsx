@@ -3,7 +3,6 @@ import {
   CheckCircle2,
   FileCheck2,
   ListTodo,
-  ShieldCheck,
 } from 'lucide-react'
 
 import type { PlatformBenefit } from '../../data/landingContent'
