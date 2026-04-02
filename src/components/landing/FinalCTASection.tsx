@@ -1,66 +1,79 @@
-import { ArrowRight, Mail, MapPin, MessageCircleMore } from 'lucide-react'
-
-import type { ContactDetail } from '../../data/landingContent'
+import type { ContactDetail, FooterPanel } from '../../data/landingContent'
 import { SectionShell } from '../layout/SectionShell'
-import { Button } from '../ui/Button'
 import { SectionHeading } from '../ui/SectionHeading'
 
 interface FinalCTASectionProps {
   contactDetails: ContactDetail[]
+  panels: FooterPanel[]
 }
 
-const contactIcons = [Mail, MessageCircleMore, MapPin]
-
-export function FinalCTASection({
-  contactDetails,
-}: FinalCTASectionProps) {
+export function FinalCTASection({ contactDetails, panels }: FinalCTASectionProps) {
   return (
     <SectionShell id="contacto" surface="dark" className="section-grid">
-      <div className="absolute inset-0 bg-gradient-to-br from-educa-red/28 via-transparent to-educa-green/18" />
-      <div className="hazard-stripes absolute inset-y-0 right-0 hidden w-1/3 opacity-40 lg:block" />
+      <div className="absolute inset-0 bg-gradient-to-br from-educa-red/24 via-transparent to-educa-green/18" />
+      <div className="hazard-stripes absolute inset-y-0 right-0 hidden w-1/3 opacity-30 lg:block" />
 
-      <div className="relative grid gap-10 lg:grid-cols-[1fr_0.86fr] lg:items-end">
+      <div className="relative">
         <SectionHeading
-          eyebrow="Contacto"
-          title="Una llamada a la acción más directa, cálida y útil para convertir interés en conversación"
-          description="El cierre combina color, botones y datos de contacto en un bloque más comercial para demos, reuniones y seguimiento de oportunidades."
+          eyebrow="Contáctanos"
+          title="Un cierre más cercano a un directorio comercial, con accesos rápidos y áreas de interés visibles"
+          description="La sección final reorganiza catálogo, verificación, contacto y navegación de servicios en una sola pieza de cierre."
           theme="dark"
         />
 
-        <div className="rounded-[32px] border border-white/10 bg-white/8 p-6 backdrop-blur">
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Button href="#servicios">
-              Explorar servicios
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button href="#programas" variant="outline-light">
-              Ver programas
-            </Button>
-          </div>
+        <div className="mt-10 flex flex-wrap gap-3">
+          {contactDetails.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm font-semibold text-slate-100 backdrop-blur"
+            >
+              {item.value}
+            </div>
+          ))}
+        </div>
 
-          <div className="mt-6 space-y-3">
-            {contactDetails.map((item, index) => {
-              const Icon = contactIcons[index]
+        <div className="mt-12 grid gap-6 xl:grid-cols-4">
+          {panels.map((panel) => {
+            const Icon = panel.icon
 
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-3 rounded-[24px] border border-white/10 bg-educa-charcoal/36 px-4 py-3 text-sm font-medium text-slate-100 transition hover:border-orange-300 hover:text-white"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-orange-300">
-                    {Icon ? <Icon className="h-5 w-5" /> : null}
+            return (
+              <article
+                key={panel.title}
+                className="rounded-[30px] border border-white/10 bg-white/8 p-6 backdrop-blur"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-orange-300">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h2 className="mt-5 text-xl font-extrabold tracking-tight text-white">{panel.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{panel.description}</p>
+
+                {panel.details?.length ? (
+                  <div className="mt-5 space-y-3">
+                    {panel.details.map((detail) => (
+                      <div
+                        key={detail}
+                        className="rounded-2xl border border-white/10 bg-educa-charcoal/36 px-4 py-3 text-sm text-slate-100"
+                      >
+                        {detail}
+                      </div>
+                    ))}
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-[0.18em] text-slate-400">
-                      {item.label}
-                    </div>
-                    <div className="mt-1 text-base">{item.value}</div>
-                  </div>
-                </a>
-              )
-            })}
-          </div>
+                ) : null}
+
+                <div className="mt-5 space-y-3">
+                  {panel.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="block rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-slate-100 transition hover:border-orange-300 hover:bg-white/6 hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </SectionShell>

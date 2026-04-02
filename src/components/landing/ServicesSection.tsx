@@ -1,14 +1,21 @@
 import { ArrowRight } from 'lucide-react'
 
-import type { ServiceCard } from '../../data/landingContent'
+import type { AccentTone, ServiceOverviewCard } from '../../data/landingContent'
 import { SectionShell } from '../layout/SectionShell'
 import { SectionHeading } from '../ui/SectionHeading'
 
 interface ServicesSectionProps {
-  services: ServiceCard[]
+  services: ServiceOverviewCard[]
 }
 
-const accentStyles = {
+const accentStyles: Record<
+  AccentTone,
+  {
+    bar: string
+    icon: string
+    label: string
+  }
+> = {
   red: {
     bar: 'from-educa-red via-educa-orange to-transparent',
     icon: 'bg-red-100 text-educa-red',
@@ -29,20 +36,20 @@ const accentStyles = {
     icon: 'bg-stone-200 text-educa-charcoal',
     label: 'text-educa-charcoal',
   },
-} as const
+}
 
 export function ServicesSection({ services }: ServicesSectionProps) {
   return (
     <SectionShell id="servicios" surface="sand" className="section-grid">
       <SectionHeading
-        eyebrow="Servicios principales"
-        title="Cuatro líneas para comunicar una oferta industrial más robusta y visual"
-        description="Cada bloque presenta un frente comercial distinto, con color, iconografía y bullets que hacen más fácil entender qué resuelve Educa 24/7."
+        eyebrow="¿Qué es lo que hacemos?"
+        title="¿Qué es lo que hacemos?"
+        description="La home ahora presenta las cuatro líneas comerciales principales con lenguaje directo, color y saltos claros hacia cada catálogo."
         align="center"
       />
 
       <div className="mt-12 grid gap-6 xl:grid-cols-4">
-        {services.map((service, index) => {
+        {services.map((service) => {
           const Icon = service.icon
           const accent = accentStyles[service.accent]
 
@@ -58,13 +65,13 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                   <Icon className="h-7 w-7" />
                 </div>
                 <span className={`text-xs font-extrabold uppercase tracking-[0.24em] ${accent.label}`}>
-                  Servicio {index + 1}
+                  Educa 24/7
                 </span>
               </div>
 
-              <h3 className="mt-6 text-2xl font-extrabold tracking-tight text-educa-ink">
+              <h2 className="mt-6 text-2xl font-extrabold tracking-tight text-educa-ink">
                 {service.title}
-              </h3>
+              </h2>
               <p className="mt-4 text-sm leading-7 text-educa-slate">{service.description}</p>
 
               <div className="mt-6 space-y-3">
@@ -80,10 +87,10 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               </div>
 
               <a
-                href="#contacto"
+                href={service.ctaHref}
                 className={`mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] ${accent.label}`}
               >
-                Conversar sobre este servicio
+                {service.ctaLabel}
                 <ArrowRight className="h-4 w-4" />
               </a>
             </article>

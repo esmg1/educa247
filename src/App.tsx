@@ -1,25 +1,22 @@
-import { CourseCategoriesSection } from './components/landing/CourseCategoriesSection'
-import { EnterpriseSection } from './components/landing/EnterpriseSection'
-import { FAQSection } from './components/landing/FAQSection'
+import { CatalogSection } from './components/landing/CatalogSection'
+import { ClientsSection } from './components/landing/ClientsSection'
 import { FinalCTASection } from './components/landing/FinalCTASection'
 import { HeroSection } from './components/landing/HeroSection'
+import { ProofBandSection } from './components/landing/ProofBandSection'
+import { ResourcesSection } from './components/landing/ResourcesSection'
 import { ServicesSection } from './components/landing/ServicesSection'
-import { StatsSection } from './components/landing/StatsSection'
-import { TrustBar } from './components/landing/TrustBar'
 import { SiteFooter } from './components/layout/SiteFooter'
 import { SiteHeader } from './components/layout/SiteHeader'
 import {
+  catalogSections,
   contactDetails,
-  enterpriseBenefits,
-  faqs,
-  footerGroups,
-  heroFeatures,
-  heroServiceChips,
+  footerPanels,
+  heroPillars,
   navLinks,
-  programCards,
-  sectorBadges,
-  serviceCards,
-  statItems,
+  proofItems,
+  resourceCards,
+  serviceOverviewCards,
+  trustTiles,
 } from './data/landingContent'
 
 function App() {
@@ -27,16 +24,17 @@ function App() {
     <div className="min-h-screen bg-educa-cloud text-educa-ink">
       <SiteHeader navLinks={navLinks} />
       <main>
-        <HeroSection serviceChips={heroServiceChips} features={heroFeatures} />
-        <ServicesSection services={serviceCards} />
-        <StatsSection items={statItems} />
-        <CourseCategoriesSection programs={programCards} />
-        <EnterpriseSection benefits={enterpriseBenefits} />
-        <TrustBar sectors={sectorBadges} />
-        <FAQSection items={faqs} />
-        <FinalCTASection contactDetails={contactDetails} />
+        <HeroSection pillars={heroPillars} />
+        <ProofBandSection items={proofItems} />
+        <ServicesSection services={serviceOverviewCards} />
+        <ResourcesSection cards={resourceCards} />
+        {catalogSections.map((section) => (
+          <CatalogSection key={section.id} section={section} />
+        ))}
+        <ClientsSection items={trustTiles} />
+        <FinalCTASection contactDetails={contactDetails} panels={footerPanels} />
       </main>
-      <SiteFooter contactDetails={contactDetails} groups={footerGroups} />
+      <SiteFooter contactDetails={contactDetails} navLinks={navLinks} />
     </div>
   )
 }
