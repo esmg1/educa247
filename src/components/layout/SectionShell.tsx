@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion'
 import type { PropsWithChildren } from 'react'
 
-import type { SectionId } from '../../data/landingContent'
 import { cn } from '../../lib/cn'
 
 interface SectionShellProps extends PropsWithChildren {
-  id?: SectionId
+  id?: string
   className?: string
   contentClassName?: string
-  surface?: 'white' | 'muted' | 'dark'
+  surface?: 'white' | 'muted' | 'dark' | 'sand'
 }
 
 const surfaceClasses = {
   white: 'bg-white',
-  muted: 'bg-slate-50',
-  dark: 'bg-casst-navy text-white',
+  muted: 'bg-casst-sand',
+  sand: 'bg-casst-sand',
+  dark: 'bg-casst-charcoal text-white',
 }
 
 export function SectionShell({

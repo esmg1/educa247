@@ -1,30 +1,25 @@
-import { SiteFooter } from './components/layout/SiteFooter'
-import { SiteHeader } from './components/layout/SiteHeader'
-import { AudiencePathsSection } from './components/landing/AudiencePathsSection'
 import { CourseCategoriesSection } from './components/landing/CourseCategoriesSection'
 import { EnterpriseSection } from './components/landing/EnterpriseSection'
 import { FAQSection } from './components/landing/FAQSection'
 import { FinalCTASection } from './components/landing/FinalCTASection'
 import { HeroSection } from './components/landing/HeroSection'
-import { HowItWorksSection } from './components/landing/HowItWorksSection'
-import { LeadershipSection } from './components/landing/LeadershipSection'
-import { PlatformBenefitsSection } from './components/landing/PlatformBenefitsSection'
-import { TestimonialsSection } from './components/landing/TestimonialsSection'
+import { ServicesSection } from './components/landing/ServicesSection'
+import { StatsSection } from './components/landing/StatsSection'
 import { TrustBar } from './components/landing/TrustBar'
+import { SiteFooter } from './components/layout/SiteFooter'
+import { SiteHeader } from './components/layout/SiteHeader'
 import {
   contactDetails,
-  courseCategories,
-  enterpriseFeatures,
+  enterpriseBenefits,
   faqs,
   footerGroups,
-  heroAudienceViews,
-  leadershipProfiles,
+  heroFeatures,
+  heroServiceChips,
   navLinks,
-  platformBenefits,
-  testimonialsPlaceholders,
-  trustItems,
-  workflowSteps,
-  audiencePaths,
+  programCards,
+  sectorBadges,
+  serviceCards,
+  statItems,
 } from './data/landingContent'
 
 function App() {
@@ -32,15 +27,12 @@ function App() {
     <div className="min-h-screen bg-casst-cloud text-casst-ink">
       <SiteHeader navLinks={navLinks} />
       <main>
-        <HeroSection audienceViews={heroAudienceViews} />
-        <TrustBar items={trustItems} />
-        <AudiencePathsSection paths={audiencePaths} />
-        <CourseCategoriesSection categories={courseCategories} />
-        <PlatformBenefitsSection benefits={platformBenefits} />
-        <HowItWorksSection steps={workflowSteps} />
-        <LeadershipSection profiles={leadershipProfiles} />
-        <EnterpriseSection features={enterpriseFeatures} />
-        <TestimonialsSection testimonials={testimonialsPlaceholders} />
+        <HeroSection serviceChips={heroServiceChips} features={heroFeatures} />
+        <ServicesSection services={serviceCards} />
+        <StatsSection items={statItems} />
+        <CourseCategoriesSection programs={programCards} />
+        <EnterpriseSection benefits={enterpriseBenefits} />
+        <TrustBar sectors={sectorBadges} />
         <FAQSection items={faqs} />
         <FinalCTASection contactDetails={contactDetails} />
       </main>

@@ -23,15 +23,15 @@ type NativeButtonProps = SharedProps &
   }
 
 const baseClasses =
-  'inline-flex items-center gap-2 rounded-2xl font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-casst-amber'
+  'inline-flex items-center gap-2 rounded-2xl font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-casst-orange'
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-casst-amber px-5 text-casst-ink shadow-float hover:-translate-y-0.5 hover:bg-amber-400',
+    'bg-gradient-to-r from-casst-red to-casst-orange px-5 text-white shadow-edge hover:-translate-y-0.5 hover:brightness-105',
   secondary:
-    'border border-slate-300 bg-white px-5 text-casst-navy hover:-translate-y-0.5 hover:border-casst-blue hover:text-casst-blue',
+    'border border-casst-mist bg-casst-cream px-5 text-casst-ink hover:-translate-y-0.5 hover:border-casst-orange hover:text-casst-red',
   'outline-light':
-    'border border-white/30 bg-transparent px-5 text-white hover:-translate-y-0.5 hover:border-white hover:bg-white/10',
+    'border border-white/30 bg-white/5 px-5 text-white hover:-translate-y-0.5 hover:border-white hover:bg-white/12',
 }
 
 const sizes: Record<ButtonSize, string> = {

@@ -19,7 +19,10 @@ export function Accordion({ items }: AccordionProps) {
         const panelId = `faq-panel-${index}`
 
         return (
-          <div key={item.question} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_14px_30px_rgba(15,39,66,0.05)]">
+          <div
+            key={item.question}
+            className="overflow-hidden rounded-[28px] border border-casst-mist bg-white shadow-[0_18px_36px_rgba(24,21,18,0.08)]"
+          >
             <button
               type="button"
               className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6"
@@ -30,8 +33,8 @@ export function Accordion({ items }: AccordionProps) {
               <span className="text-base font-bold text-casst-ink sm:text-lg">{item.question}</span>
               <span
                 className={cn(
-                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-casst-navy transition',
-                  isOpen && 'rotate-180 bg-casst-navy text-white',
+                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-casst-sand text-casst-red transition',
+                  isOpen && 'rotate-180 bg-casst-red text-white',
                 )}
               >
                 <ChevronDown className="h-5 w-5" />
@@ -46,7 +49,7 @@ export function Accordion({ items }: AccordionProps) {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.24, ease: 'easeOut' }}
                 >
-                  <div className="border-t border-slate-100 px-5 pb-5 pt-4 text-sm leading-7 text-casst-slate sm:px-6">
+                  <div className="border-t border-casst-mist px-5 pb-5 pt-4 text-sm leading-7 text-casst-slate sm:px-6">
                     {item.answer}
                   </div>
                 </motion.div>

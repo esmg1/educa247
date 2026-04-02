@@ -5,8 +5,8 @@
 @layer base {
   :root {
     font-family: 'Manrope', sans-serif;
-    color: #0f172a;
-    background-color: #f8fafc;
+    color: #181512;
+    background-color: #fffaf2;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -26,8 +26,9 @@
     margin: 0;
     min-width: 320px;
     background:
-      radial-gradient(circle at top, rgba(15, 39, 66, 0.08), transparent 30%),
-      #f8fafc;
+      radial-gradient(circle at top left, rgba(255, 138, 0, 0.18), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(47, 143, 83, 0.12), transparent 24%),
+      linear-gradient(180deg, #fffaf2 0%, #f7efe1 100%);
   }
 
   a {
@@ -48,30 +49,60 @@
   }
 
   ::selection {
-    background: rgba(245, 158, 11, 0.24);
+    background: rgba(255, 138, 0, 0.28);
   }
 }
 
 @layer components {
   .section-grid {
     background-image:
-      linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      linear-gradient(rgba(124, 46, 33, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 46, 33, 0.08) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
-  .blueprint-panel {
+  .industrial-panel {
     position: relative;
     overflow: hidden;
   }
 
-  .blueprint-panel::before {
+  .industrial-panel::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at top right, rgba(245, 158, 11, 0.14), transparent 30%),
-      linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(226, 232, 240, 0.52));
+      radial-gradient(circle at top right, rgba(255, 138, 0, 0.18), transparent 30%),
+      radial-gradient(circle at bottom left, rgba(47, 143, 83, 0.12), transparent 32%),
+      linear-gradient(135deg, rgba(255, 247, 235, 0.94), rgba(245, 236, 222, 0.74));
+    pointer-events: none;
+  }
+
+  .hazard-stripes {
+    background-image:
+      repeating-linear-gradient(
+        -55deg,
+        rgba(226, 72, 47, 0.12) 0 18px,
+        rgba(255, 138, 0, 0.12) 18px 36px,
+        transparent 36px 54px
+      );
+  }
+
+  .metal-frame {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(180deg, rgba(35, 40, 44, 0.92), rgba(22, 24, 26, 0.98));
+    box-shadow: 0 28px 64px rgba(24, 21, 18, 0.28);
+  }
+
+  .metal-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.08) 12%, transparent 24%),
+      radial-gradient(circle at top right, rgba(255, 138, 0, 0.22), transparent 28%);
     pointer-events: none;
   }
 }

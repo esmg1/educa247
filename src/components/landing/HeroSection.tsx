@@ -1,98 +1,84 @@
 import { motion } from 'framer-motion'
-import {
-  ArrowRight,
-  CheckCheck,
-  ShieldCheck,
-} from 'lucide-react'
-import { useState } from 'react'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
 
-import type { HeroAudienceView } from '../../data/landingContent'
+import heroWorker from '../../assets/industrial/hero-worker.jpg'
+import machineryFloor from '../../assets/industrial/machinery-floor.jpg'
+import type { HeroFeature } from '../../data/landingContent'
 import { Badge } from '../ui/Badge'
 import { Button } from '../ui/Button'
 
 interface HeroSectionProps {
-  audienceViews: HeroAudienceView[]
+  serviceChips: string[]
+  features: HeroFeature[]
 }
 
-export function HeroSection({ audienceViews }: HeroSectionProps) {
-  const [activeAudience, setActiveAudience] = useState<HeroAudienceView>(audienceViews[0])
-
+export function HeroSection({ serviceChips, features }: HeroSectionProps) {
   return (
-    <section id="inicio" className="section-grid relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 pb-16 pt-10 sm:pb-20 sm:pt-16">
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-casst-navy/8 to-transparent" />
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6  lg:items-center lg:px-8">
+    <section id="inicio" className="section-grid relative overflow-hidden bg-casst-charcoal text-white">
+      <div className="absolute inset-0 bg-mesh opacity-90" />
+      <div className="hazard-stripes absolute inset-x-0 top-0 h-44 opacity-60" />
+      <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-white/5 to-transparent lg:block" />
+
+      <div className="relative mx-auto grid max-w-7xl gap-14 px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: 'easeOut' }}
           className="relative"
         >
-          <Badge variant="navy" className="mb-6">
-            Capacitacion en seguridad industrial
+          <Badge variant="red" className="mb-6 border border-white/10 bg-white/10 text-white">
+            CASST | Seguridad industrial y HSE
           </Badge>
-          <h1 className="text-balance max-w-3xl text-4xl font-extrabold tracking-tight text-casst-ink sm:text-5xl lg:text-6xl">
-            Formacion profesional en seguridad industrial para personas, equipos y organizaciones
+
+          <h1 className="text-balance max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            Formacion, certificacion y control HSE para operaciones que no pueden improvisar
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-casst-slate">
-            Una plataforma disenada para capacitar, evaluar y dar seguimiento al aprendizaje en seguridad, salud e higiene industrial con un enfoque practico, actual y verificable.
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            La home ahora comunica una propuesta mas industrial: servicios claros, bloques visuales,
+            programas tecnicos y una capa comercial lista para empresas, coordinadores y equipos
+            operativos.
           </p>
 
-          <div className="mt-8 inline-flex flex-wrap gap-2 rounded-full border border-slate-200 bg-white/90 p-2 shadow-float">
-            {audienceViews.map((view) => (
-              <button
-                key={view.audience}
-                type="button"
-                aria-pressed={activeAudience.audience === view.audience}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                  activeAudience.audience === view.audience
-                    ? 'bg-casst-navy text-white'
-                    : 'text-casst-slate hover:bg-slate-100'
-                }`}
-                onClick={() => setActiveAudience(view)}
+          <div className="mt-8 flex flex-wrap gap-3">
+            {serviceChips.map((chip) => (
+              <span
+                key={chip}
+                className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm font-semibold text-slate-100 backdrop-blur"
               >
-                {view.selectorLabel}
-              </button>
-            ))}
-          </div>
-
-          <p className="mt-6 max-w-2xl text-base leading-7 text-casst-slate">
-            {activeAudience.description}
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            {activeAudience.highlights.map((highlight) => (
-              <div
-                key={highlight}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-casst-slate shadow-sm"
-              >
-                <CheckCheck className="h-4 w-4 text-casst-success" />
-                {highlight}
-              </div>
+                {chip}
+              </span>
             ))}
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="#cursos">
-              Explorar programas
+            <Button href="#servicios">
+              Ver servicios
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button href={activeAudience.secondaryCta.href} variant="secondary">
-              {activeAudience.secondaryCta.label}
+            <Button href="#contacto" variant="outline-light">
+              Solicitar contacto
             </Button>
           </div>
 
-          <div className="mt-8 grid gap-3 text-sm font-semibold text-casst-slate sm:grid-cols-2 xl:grid-cols-4">
-            {[
-              '100% online',
-              'Certificados digitales',
-              'Seguimiento por modulos',
-              'Enfoque practico y corporativo',
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-casst-amber" />
-                {item}
-              </div>
-            ))}
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {features.map((feature) => {
+              const Icon = feature.icon
+
+              return (
+                <div
+                  key={feature.label}
+                  className="rounded-[26px] border border-white/10 bg-white/6 p-4 backdrop-blur"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-orange-300">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <p className="mt-4 text-sm font-semibold leading-6 text-slate-100">
+                    {feature.label}
+                  </p>
+                </div>
+              )
+            })}
           </div>
         </motion.div>
 
@@ -102,7 +88,47 @@ export function HeroSection({ audienceViews }: HeroSectionProps) {
           transition={{ duration: 0.55, delay: 0.1, ease: 'easeOut' }}
           className="relative"
         >
-          
+          <div className="metal-frame rounded-[36px] p-3">
+            <img
+              src={heroWorker}
+              alt="Operario con casco naranja inspeccionando maquinaria industrial de gran tamano"
+              className="h-[420px] w-full rounded-[28px] object-cover sm:h-[520px]"
+            />
+
+            <div className="absolute left-6 top-6 rounded-[24px] border border-white/10 bg-casst-charcoal/78 px-5 py-4 backdrop-blur">
+              <div className="text-xs font-extrabold uppercase tracking-[0.22em] text-orange-300">
+                Frente operativo
+              </div>
+              <div className="mt-2 text-xl font-extrabold">Capacitacion visible en campo</div>
+              <p className="mt-2 max-w-xs text-sm leading-6 text-slate-300">
+                Un lenguaje visual mas cercano a planta, supervision y mantenimiento.
+              </p>
+            </div>
+
+            <div className="absolute bottom-6 right-6 rounded-[24px] bg-white/92 px-5 py-4 text-casst-ink shadow-float">
+              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.22em] text-casst-red">
+                <ShieldCheck className="h-4 w-4" />
+                Evidencia de cumplimiento
+              </div>
+              <div className="mt-2 text-2xl font-extrabold">4 lineas comerciales</div>
+              <p className="mt-1 max-w-[14rem] text-sm leading-6 text-casst-slate">
+                Certificaciones, capacitaciones, mediciones y asesorias en una sola lectura.
+              </p>
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.45, delay: 0.25, ease: 'easeOut' }}
+            className="metal-frame absolute -bottom-12 -left-4 hidden w-44 rounded-[28px] p-2 md:block"
+          >
+            <img
+              src={machineryFloor}
+              alt="Piso de fabrica con operario y componente metalico suspendido"
+              className="h-44 w-full rounded-[20px] object-cover"
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>

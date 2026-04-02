@@ -20,7 +20,7 @@ export function SectionHeading({
       <div
         className={cn(
           'mb-4 text-xs font-extrabold uppercase tracking-[0.24em]',
-          theme === 'dark' ? 'text-slate-300' : 'text-casst-blue',
+          theme === 'dark' ? 'text-orange-200' : 'text-casst-red',
         )}
       >
         {eyebrow}

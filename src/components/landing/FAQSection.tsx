@@ -9,12 +9,12 @@ interface FAQSectionProps {
 
 export function FAQSection({ items }: FAQSectionProps) {
   return (
-    <SectionShell surface="muted">
+    <SectionShell surface="sand" className="section-grid">
       <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <SectionHeading
-          eyebrow="FAQ"
-          title="Respuestas claras para reducir friccion antes de decidir"
-          description="La pagina deja resueltas las preguntas mas frecuentes para personas, equipos y responsables de capacitacion."
+          eyebrow="Preguntas frecuentes"
+          title="Respuestas cortas para que la pagina siga vendiendo sin perder claridad"
+          description="El cierre conserva una FAQ directa, con lenguaje comercial y tecnico suficiente para reducir dudas antes del contacto."
         />
         <Accordion items={items} />
       </div>

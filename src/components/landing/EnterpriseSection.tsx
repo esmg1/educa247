@@ -1,35 +1,101 @@
-import { FileCheck2 } from 'lucide-react'
-
+import machineryFloor from '../../assets/industrial/machinery-floor.jpg'
+import type { EnterpriseBenefit } from '../../data/landingContent'
 import { SectionShell } from '../layout/SectionShell'
+import { Badge } from '../ui/Badge'
 import { SectionHeading } from '../ui/SectionHeading'
 
 interface EnterpriseSectionProps {
-  features: string[]
+  benefits: EnterpriseBenefit[]
 }
 
 export function EnterpriseSection({
-  features,
+  benefits,
 }: EnterpriseSectionProps) {
   return (
-    <SectionShell id="empresas" surface="muted" className="section-grid">
-      <div className="lg:items-center">
+    <SectionShell id="empresas" surface="dark" className="section-grid">
+      <div className="absolute inset-0 bg-mesh opacity-70" />
+
+      <div className="relative grid gap-10 xl:grid-cols-[0.92fr_1.08fr] xl:items-center">
         <div>
           <SectionHeading
-            eyebrow="Capacitacion para equipos y organizaciones"
-            title="Una capa de gestion para seguimiento, cumplimiento y visibilidad corporativa"
-            description="CASST no solo capacita personas. Tambien permite estructurar rutas por area, supervisar avance y sostener evidencia de cumplimiento para distintos equipos."
+            eyebrow="Solucion para empresas"
+            title="Una home que tambien vende control, trazabilidad y lectura ejecutiva"
+            description="El nuevo bloque empresarial deja atras el tono academico plano y muestra seguimiento, cumplimiento y evidencia con un enfoque mas corporativo."
+            theme="dark"
           />
 
-          <div className="mt-8 space-y-3">
-            {features.map((feature) => (
-              <div
-                key={feature}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-casst-slate"
-              >
-                <FileCheck2 className="h-4 w-4 text-casst-success" />
-                {feature}
+          <div className="mt-8 space-y-4">
+            {benefits.map((benefit) => {
+              const Icon = benefit.icon
+
+              return (
+                <div
+                  key={benefit.title}
+                  className="rounded-[28px] border border-white/10 bg-white/6 p-5 backdrop-blur"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-orange-300">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white">{benefit.title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-slate-300">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="grid gap-5">
+          <div className="metal-frame rounded-[34px] p-3">
+            <img
+              src={machineryFloor}
+              alt="Operario en planta observando una pieza metalica suspendida dentro de una fabrica"
+              className="h-[300px] w-full rounded-[26px] object-cover sm:h-[340px]"
+            />
+            <div className="absolute left-6 top-6 rounded-[24px] border border-white/10 bg-casst-charcoal/80 px-5 py-4 backdrop-blur">
+              <Badge variant="amber" className="border border-white/10 bg-white/10 text-white">
+                Panel corporativo
+              </Badge>
+              <div className="mt-3 text-xl font-extrabold text-white">Cumplimiento por rol</div>
+            </div>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="rounded-[28px] border border-white/10 bg-white/6 p-6 backdrop-blur">
+              <div className="text-xs font-extrabold uppercase tracking-[0.24em] text-orange-300">
+                Asignaciones
               </div>
-            ))}
+              <div className="mt-3 text-2xl font-extrabold text-white">Rutas por cargo</div>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Programas distintos para supervisores, tecnicos, contratistas o personal operativo.
+              </p>
+            </div>
+
+            <div className="rounded-[28px] border border-white/10 bg-white/6 p-6 backdrop-blur">
+              <div className="text-xs font-extrabold uppercase tracking-[0.24em] text-orange-300">
+                Evidencia
+              </div>
+              <div className="mt-3 text-2xl font-extrabold text-white">Listo para auditoria</div>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Estados, certificados y seguimiento en una presentacion mas clara para cumplimiento.
+              </p>
+            </div>
+
+            <div className="rounded-[28px] border border-white/10 bg-white/6 p-6 backdrop-blur sm:col-span-2">
+              <div className="text-xs font-extrabold uppercase tracking-[0.24em] text-orange-300">
+                Coordinacion
+              </div>
+              <div className="mt-3 text-2xl font-extrabold text-white">
+                Lectura ejecutiva con enfoque industrial
+              </div>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Una sola vista para revisar avance, pendientes, renovaciones y cobertura de equipos
+                sin caer en una estetica de software generico.
+              </p>
+            </div>
           </div>
         </div>
       </div>

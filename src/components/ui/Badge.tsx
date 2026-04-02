@@ -3,15 +3,17 @@ import type { PropsWithChildren } from 'react'
 import { cn } from '../../lib/cn'
 
 interface BadgeProps extends PropsWithChildren {
-  variant?: 'amber' | 'green' | 'slate' | 'navy'
+  variant?: 'amber' | 'green' | 'slate' | 'navy' | 'red' | 'charcoal'
   className?: string
 }
 
 const variants = {
-  amber: 'bg-amber-100 text-amber-800',
-  green: 'bg-emerald-100 text-emerald-700',
-  slate: 'bg-slate-100 text-slate-700',
-  navy: 'bg-casst-navy/10 text-casst-navy',
+  amber: 'bg-orange-100 text-orange-800',
+  green: 'bg-emerald-100 text-emerald-800',
+  slate: 'bg-stone-100 text-stone-700',
+  navy: 'bg-casst-charcoal/10 text-casst-charcoal',
+  red: 'bg-red-100 text-red-700',
+  charcoal: 'bg-casst-charcoal text-white',
 }
 
 export function Badge({ children, variant = 'slate', className }: BadgeProps) {

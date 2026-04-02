@@ -5,50 +5,54 @@ import { describe, expect, it } from 'vitest'
 import App from '../App'
 
 describe('CASST landing page', () => {
-  it('renders the main hero content', () => {
+  it('renders the new industrial hero content', () => {
     render(<App />)
 
     expect(
       screen.getByRole('heading', {
-        name: /formacion profesional en seguridad industrial/i,
+        name: /formacion, certificacion y control hse para operaciones que no pueden improvisar/i,
+      }),
+    ).toBeInTheDocument()
+
+    expect(screen.getByRole('link', { name: /ver servicios/i })).toHaveAttribute('href', '#servicios')
+    expect(
+      screen.getByRole('img', {
+        name: /operario con casco naranja inspeccionando maquinaria industrial de gran tamano/i,
       }),
     ).toBeInTheDocument()
   })
 
-  it('renders header navigation with expected anchors', () => {
+  it('renders header navigation with the new anchors', () => {
     render(<App />)
 
     expect(screen.getAllByRole('link', { name: 'Inicio' })[0]).toHaveAttribute('href', '#inicio')
-    expect(screen.getAllByRole('link', { name: 'Cursos' })[0]).toHaveAttribute('href', '#cursos')
-    expect(screen.getAllByRole('link', { name: 'Para Empresas' })[0]).toHaveAttribute('href', '#empresas')
-    expect(screen.getAllByRole('link', { name: 'Metodologia' })[0]).toHaveAttribute('href', '#metodologia')
-    expect(screen.getAllByRole('link', { name: 'Equipo' })[0]).toHaveAttribute('href', '#equipo')
+    expect(screen.getAllByRole('link', { name: 'Servicios' })[0]).toHaveAttribute('href', '#servicios')
+    expect(screen.getAllByRole('link', { name: 'Programas' })[0]).toHaveAttribute('href', '#programas')
+    expect(screen.getAllByRole('link', { name: 'Empresas' })[0]).toHaveAttribute('href', '#empresas')
+    expect(screen.getAllByRole('link', { name: 'Sectores' })[0]).toHaveAttribute('href', '#sectores')
     expect(screen.getAllByRole('link', { name: 'Contacto' })[0]).toHaveAttribute('href', '#contacto')
   })
 
-  it('switches hero content when audience changes', async () => {
-    const user = userEvent.setup()
+  it('shows the four main service cards', () => {
     render(<App />)
 
-    const audienceToggle = screen.getAllByRole('button', { name: 'Empresas' })[0]
-    await user.click(audienceToggle)
-
-    expect(audienceToggle).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getAllByText(/panel para coordinadores/i).length).toBeGreaterThan(0)
-    expect(screen.getByRole('link', { name: /ver solucion empresarial/i })).toHaveAttribute('href', '#empresas')
+    expect(screen.getByRole('heading', { name: 'Certificaciones' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Capacitaciones HSE' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Mediciones' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Asesorias' })).toBeInTheDocument()
   })
 
   it('toggles faq accordion state', async () => {
     const user = userEvent.setup()
     render(<App />)
 
-    const question = screen.getAllByRole('button', {
-      name: /la plataforma sirve para empresas/i,
-    })[0]
+    const question = screen.getByRole('button', {
+      name: /casst esta pensado solo para cursos en linea/i,
+    })
 
-    expect(question).toHaveAttribute('aria-expanded', 'false')
-    await user.click(question)
     expect(question).toHaveAttribute('aria-expanded', 'true')
+    await user.click(question)
+    expect(question).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('opens and closes the mobile menu after selecting a link', async () => {
