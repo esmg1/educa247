@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        casst: {
+        educa: {
           red: '#E2482F',
           orange: '#FF8A00',
           green: '#2F8F53',

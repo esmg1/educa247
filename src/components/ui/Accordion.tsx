@@ -21,7 +21,7 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={item.question}
-            className="overflow-hidden rounded-[28px] border border-casst-mist bg-white shadow-[0_18px_36px_rgba(24,21,18,0.08)]"
+            className="overflow-hidden rounded-[28px] border border-educa-mist bg-white shadow-[0_18px_36px_rgba(24,21,18,0.08)]"
           >
             <button
               type="button"
@@ -30,11 +30,11 @@ export function Accordion({ items }: AccordionProps) {
               aria-controls={panelId}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
-              <span className="text-base font-bold text-casst-ink sm:text-lg">{item.question}</span>
+              <span className="text-base font-bold text-educa-ink sm:text-lg">{item.question}</span>
               <span
                 className={cn(
-                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-casst-sand text-casst-red transition',
-                  isOpen && 'rotate-180 bg-casst-red text-white',
+                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-educa-sand text-educa-red transition',
+                  isOpen && 'rotate-180 bg-educa-red text-white',
                 )}
               >
                 <ChevronDown className="h-5 w-5" />
@@ -49,7 +49,7 @@ export function Accordion({ items }: AccordionProps) {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.24, ease: 'easeOut' }}
                 >
-                  <div className="border-t border-casst-mist px-5 pb-5 pt-4 text-sm leading-7 text-casst-slate sm:px-6">
+                  <div className="border-t border-educa-mist px-5 pb-5 pt-4 text-sm leading-7 text-educa-slate sm:px-6">
                     {item.answer}
                   </div>
                 </motion.div>

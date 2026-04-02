@@ -116,12 +116,12 @@ export const heroServiceChips = [
   'Certificaciones por competencias',
   'Capacitaciones HSE',
   'Mediciones ocupacionales',
-  'Asesorias tecnicas',
+  'Asesorías técnicas',
 ]
 
 export const heroFeatures: HeroFeature[] = [
-  { label: 'Rutas modulares por operacion y perfil', icon: BookOpenCheck },
-  { label: 'Evaluacion, evidencia y certificacion digital', icon: FileBadge2 },
+  { label: 'Rutas modulares por operación y perfil', icon: BookOpenCheck },
+  { label: 'Evaluación, evidencia y certificación digital', icon: FileBadge2 },
   { label: 'Cobertura para personas, cuadrillas y empresas', icon: UsersRound },
 ]
 
@@ -129,11 +129,11 @@ export const serviceCards: ServiceCard[] = [
   {
     title: 'Certificaciones',
     description:
-      'Programas por competencias para validar habilidades operativas, cumplimiento y desempeno en contextos industriales reales.',
+      'Programas por competencias para validar habilidades operativas, cumplimiento y desempeño en contextos industriales reales.',
     bullets: [
-      'Prevencion de riesgos laborales',
+      'Prevención de riesgos laborales',
       'Asistencia en seguridad industrial',
-      'Formacion de formadores',
+      'Formación de formadores',
     ],
     icon: BadgeCheck,
     accent: 'red',
@@ -141,11 +141,11 @@ export const serviceCards: ServiceCard[] = [
   {
     title: 'Capacitaciones HSE',
     description:
-      'Experiencias practicas para equipos tecnicos y operativos en trabajos criticos, respuesta y control preventivo.',
+      'Experiencias prácticas para equipos técnicos y operativos en trabajos críticos, respuesta y control preventivo.',
     bullets: [
       'Trabajos en alturas',
       'Espacios confinados',
-      'Riesgo electrico y brigadas',
+      'Riesgo eléctrico y brigadas',
     ],
     icon: HardHat,
     accent: 'orange',
@@ -153,22 +153,22 @@ export const serviceCards: ServiceCard[] = [
   {
     title: 'Mediciones',
     description:
-      'Evaluacion de factores de riesgo laboral con enfoque tecnico, trazable y orientado a decisiones correctivas.',
+      'Evaluación de factores de riesgo laboral con enfoque técnico, trazable y orientado a decisiones correctivas.',
     bullets: [
-      'Ruido, gases e iluminacion',
-      'Material particulado y estres termico',
-      'Ergonomia y exposicion ocupacional',
+      'Ruido, gases e iluminación',
+      'Material particulado y estrés térmico',
+      'Ergonomía y exposición ocupacional',
     ],
     icon: Gauge,
     accent: 'green',
   },
   {
-    title: 'Asesorias',
+    title: 'Asesorías',
     description:
-      'Acompanamiento para fortalecer sistemas, requisitos legales y cultura preventiva en operaciones de alto impacto.',
+      'Acompañamiento para fortalecer sistemas, requisitos legales y cultura preventiva en operaciones de alto impacto.',
     bullets: [
       'Planes de emergencia y contingencia',
-      'Investigacion de incidentes',
+      'Investigación de incidentes',
       'Reglamentos y soporte documental',
     ],
     icon: BriefcaseBusiness,
@@ -178,30 +178,30 @@ export const serviceCards: ServiceCard[] = [
 
 export const statItems: StatItem[] = [
   {
-    value: '4 lineas',
+    value: '4 líneas',
     label: 'de servicio conectadas',
     detail: 'Una sola propuesta comercial para certificar, capacitar, medir y asesorar.',
     icon: Factory,
     accent: 'red',
   },
   {
-    value: '360deg',
+    value: '360°',
     label: 'de seguimiento visible',
-    detail: 'Desde el diagnostico inicial hasta la evidencia final de cumplimiento.',
+    detail: 'Desde el diagnóstico inicial hasta la evidencia final de cumplimiento.',
     icon: ChartColumnIncreasing,
     accent: 'orange',
   },
   {
     value: '1 panel',
-    label: 'para coordinacion corporativa',
-    detail: 'Avance por cargo, alertas de renovacion y trazabilidad por colaborador.',
+    label: 'para coordinación corporativa',
+    detail: 'Avance por cargo, alertas de renovación y trazabilidad por colaborador.',
     icon: LayoutDashboard,
     accent: 'green',
   },
   {
     value: 'HSE',
     label: 'con enfoque aplicado',
-    detail: 'Diseno formativo pensado para industria, supervisores y equipos operativos.',
+    detail: 'Diseño formativo pensado para industria, supervisores y equipos operativos.',
     icon: ShieldCheck,
     accent: 'charcoal',
   },
@@ -211,23 +211,23 @@ export const programCards: ProgramCard[] = [
   {
     title: 'Seguridad industrial',
     description:
-      'Control preventivo, procedimientos y criterios de seguridad para operaciones, mantenimiento y supervision.',
-    bullets: ['Analisis de tareas', 'Permisos de trabajo'],
+      'Control preventivo, procedimientos y criterios de seguridad para operaciones, mantenimiento y supervisión.',
+    bullets: ['Análisis de tareas', 'Permisos de trabajo'],
     icon: ShieldPlus,
     tag: 'Alta demanda',
   },
   {
     title: 'Trabajos en alturas',
     description:
-      'Planeacion, inspeccion y ejecucion segura de labores sobre estructuras, cubiertas y puntos elevados.',
-    bullets: ['Uso de lineas de vida', 'Rescate basico'],
+      'Planeación, inspección y ejecución segura de labores sobre estructuras, cubiertas y puntos elevados.',
+    bullets: ['Uso de líneas de vida', 'Rescate básico'],
     icon: RadioTower,
-    tag: 'Critico',
+    tag: 'Crítico',
   },
   {
-    title: 'Riesgo electrico',
+    title: 'Riesgo eléctrico',
     description:
-      'Buenas practicas para intervenciones, bloqueo, etiquetado y control de energia en campo.',
+      'Buenas prácticas para intervenciones, bloqueo, etiquetado y control de energía en campo.',
     bullets: ['LOTO', 'Procedimientos seguros'],
     icon: Sparkles,
     tag: null,
@@ -235,15 +235,15 @@ export const programCards: ProgramCard[] = [
   {
     title: 'Espacios confinados',
     description:
-      'Ingreso, monitoreo atmosferico y respuesta en actividades donde el error operativo no es una opcion.',
+      'Ingreso, monitoreo atmosférico y respuesta en actividades donde el error operativo no es una opción.',
     bullets: ['Permisos de ingreso', 'Monitoreo continuo'],
     icon: AlarmSmoke,
-    tag: 'Supervision',
+    tag: 'Supervisión',
   },
   {
     title: 'Brigadas y emergencias',
     description:
-      'Formacion para actuar, contener y coordinar incidentes con tiempos de respuesta mas claros.',
+      'Formación para actuar, contener y coordinar incidentes con tiempos de respuesta más claros.',
     bullets: ['Primer respondiente', 'Simulacros'],
     icon: Siren,
     tag: null,
@@ -251,24 +251,24 @@ export const programCards: ProgramCard[] = [
   {
     title: 'Higiene y mediciones',
     description:
-      'Identificacion y evaluacion de agentes fisicos, quimicos y ergonomicos en puestos reales.',
-    bullets: ['Ruido y vibracion', 'Iluminacion y gases'],
+      'Identificación y evaluación de agentes físicos, químicos y ergonómicos en puestos reales.',
+    bullets: ['Ruido y vibración', 'Iluminación y gases'],
     icon: ScanSearch,
-    tag: 'Tecnico',
+    tag: 'Técnico',
   },
   {
     title: 'Mantenimiento seguro',
     description:
-      'Rutinas seguras para equipos, herramientas, motores y componentes criticos en planta.',
-    bullets: ['Trabajo mecanico', 'Inspeccion de activos'],
+      'Rutinas seguras para equipos, herramientas, motores y componentes críticos en planta.',
+    bullets: ['Trabajo mecánico', 'Inspección de activos'],
     icon: Wrench,
     tag: null,
   },
   {
     title: 'Cultura preventiva',
     description:
-      'Habitos, liderazgo visible y comunicacion para sostener conductas seguras en el tiempo.',
-    bullets: ['Liderazgo operativo', 'Observacion preventiva'],
+      'Hábitos, liderazgo visible y comunicación para sostener conductas seguras en el tiempo.',
+    bullets: ['Liderazgo operativo', 'Observación preventiva'],
     icon: Lightbulb,
     tag: 'Continuidad',
   },
@@ -276,8 +276,8 @@ export const programCards: ProgramCard[] = [
 
 export const enterpriseBenefits: EnterpriseBenefit[] = [
   {
-    title: 'Asignacion por area, cargo o contratista',
-    description: 'Construye rutas formativas segun funciones reales y exigencias del frente operativo.',
+    title: 'Asignación por área, cargo o contratista',
+    description: 'Construye rutas formativas según funciones reales y exigencias del frente operativo.',
     icon: Building2,
   },
   {
@@ -286,57 +286,57 @@ export const enterpriseBenefits: EnterpriseBenefit[] = [
     icon: ClipboardCheck,
   },
   {
-    title: 'Evidencia lista para auditoria',
+    title: 'Evidencia lista para auditoría',
     description: 'Conserva historial, certificaciones y estados de avance para soporte documental.',
     icon: FileBadge2,
   },
   {
-    title: 'Lectura ejecutiva para coordinacion',
-    description: 'Transforma informacion tecnica en tableros claros para supervision y decision.',
+    title: 'Lectura ejecutiva para coordinación',
+    description: 'Transforma información técnica en tableros claros para supervisión y decisión.',
     icon: ChartColumnIncreasing,
   },
 ]
 
 export const sectorBadges: SectorBadge[] = [
   { label: 'Manufactura', icon: Factory },
-  { label: 'Construccion', icon: HardHat },
-  { label: 'Energia', icon: Flame },
-  { label: 'Logistica', icon: Building2 },
+  { label: 'Construcción', icon: HardHat },
+  { label: 'Energía', icon: Flame },
+  { label: 'Logística', icon: Building2 },
   { label: 'Mantenimiento', icon: Cog },
-  { label: 'Operaciones criticas', icon: ShieldCheck },
+  { label: 'Operaciones críticas', icon: ShieldCheck },
 ]
 
 export const faqs: FAQItem[] = [
   {
-    question: 'CASST esta pensado solo para cursos en linea?',
+    question: '¿Educa 24/7 está pensado solo para cursos en línea?',
     answer:
-      'No. La propuesta se presenta como una plataforma y una capa comercial para certificacion, capacitacion, medicion y acompanamiento tecnico con enfoque industrial.',
+      'No. La propuesta se presenta como una plataforma y una capa comercial para certificación, capacitación, medición y acompañamiento técnico con enfoque industrial.',
   },
   {
-    question: 'Se puede usar con equipos y empresas?',
+    question: '¿Se puede usar con equipos y empresas?',
     answer:
-      'Si. La landing se enfoca en mostrar rutas para organizaciones, seguimiento por colaborador, evidencia y lectura ejecutiva para coordinadores.',
+      'Sí. La landing se enfoca en mostrar rutas para organizaciones, seguimiento por colaborador, evidencia y lectura ejecutiva para coordinadores.',
   },
   {
-    question: 'Que tipo de programas pueden destacarse en la home?',
+    question: '¿Qué tipo de programas pueden destacarse en la home?',
     answer:
-      'Programas de seguridad industrial, trabajos en alturas, espacios confinados, riesgo electrico, brigadas, higiene industrial y otras rutas alineadas al contexto del cliente.',
+      'Programas de seguridad industrial, trabajos en alturas, espacios confinados, riesgo eléctrico, brigadas, higiene industrial y otras rutas alineadas al contexto del cliente.',
   },
   {
-    question: 'La pagina puede comunicar servicios tecnicos ademas de capacitacion?',
+    question: '¿La página puede comunicar servicios técnicos además de capacitación?',
     answer:
-      'Si. El nuevo layout deja visibles las cuatro lineas comerciales: certificaciones, capacitaciones, mediciones y asesorias.',
+      'Sí. El nuevo layout deja visibles las cuatro líneas comerciales: certificaciones, capacitaciones, mediciones y asesorías.',
   },
   {
-    question: 'Habra espacio para activos reales del cliente?',
+    question: '¿Habrá espacio para activos reales del cliente?',
     answer:
-      'Si. La estructura deja areas faciles de reemplazar con logos, fotos de campo, cifras reales y testimonios cuando el cliente los entregue.',
+      'Sí. La estructura deja áreas fáciles de reemplazar con logos, fotos de campo, cifras reales y testimonios cuando el cliente los entregue.',
   },
 ]
 
 export const footerGroups: FooterGroup[] = [
   {
-    title: 'Navegacion',
+    title: 'Navegación',
     links: [
       { label: 'Inicio', href: '#inicio' },
       { label: 'Servicios', href: '#servicios' },
@@ -354,7 +354,7 @@ export const footerGroups: FooterGroup[] = [
   {
     title: 'Empresas',
     links: [
-      { label: 'Gestion por equipos', href: '#empresas' },
+      { label: 'Gestión por equipos', href: '#empresas' },
       { label: 'Sectores', href: '#sectores' },
       { label: 'Contacto', href: '#contacto' },
     ],
@@ -364,8 +364,8 @@ export const footerGroups: FooterGroup[] = [
 export const contactDetails: ContactDetail[] = [
   {
     label: 'Correo comercial',
-    value: 'hola@casst.ec',
-    href: 'mailto:hola@casst.ec',
+    value: 'hola@educa247.ec',
+    href: 'mailto:hola@educa247.ec',
   },
   {
     label: 'WhatsApp',

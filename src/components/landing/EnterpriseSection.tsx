@@ -18,9 +18,9 @@ export function EnterpriseSection({
       <div className="relative grid gap-10 xl:grid-cols-[0.92fr_1.08fr] xl:items-center">
         <div>
           <SectionHeading
-            eyebrow="Solucion para empresas"
-            title="Una home que tambien vende control, trazabilidad y lectura ejecutiva"
-            description="El nuevo bloque empresarial deja atras el tono academico plano y muestra seguimiento, cumplimiento y evidencia con un enfoque mas corporativo."
+            eyebrow="Solución para empresas"
+            title="Una home que también vende control, trazabilidad y lectura ejecutiva"
+            description="El nuevo bloque empresarial deja atrás el tono académico plano y muestra seguimiento, cumplimiento y evidencia con un enfoque más corporativo."
             theme="dark"
           />
 
@@ -52,10 +52,10 @@ export function EnterpriseSection({
           <div className="metal-frame rounded-[34px] p-3">
             <img
               src={machineryFloor}
-              alt="Operario en planta observando una pieza metalica suspendida dentro de una fabrica"
+              alt="Operario en planta observando una pieza metálica suspendida dentro de una fábrica"
               className="h-[300px] w-full rounded-[26px] object-cover sm:h-[340px]"
             />
-            <div className="absolute left-6 top-6 rounded-[24px] border border-white/10 bg-casst-charcoal/80 px-5 py-4 backdrop-blur">
+            <div className="absolute left-6 top-6 rounded-[24px] border border-white/10 bg-educa-charcoal/80 px-5 py-4 backdrop-blur">
               <Badge variant="amber" className="border border-white/10 bg-white/10 text-white">
                 Panel corporativo
               </Badge>
@@ -70,7 +70,7 @@ export function EnterpriseSection({
               </div>
               <div className="mt-3 text-2xl font-extrabold text-white">Rutas por cargo</div>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                Programas distintos para supervisores, tecnicos, contratistas o personal operativo.
+                Programas distintos para supervisores, técnicos, contratistas o personal operativo.
               </p>
             </div>
 
@@ -78,9 +78,9 @@ export function EnterpriseSection({
               <div className="text-xs font-extrabold uppercase tracking-[0.24em] text-orange-300">
                 Evidencia
               </div>
-              <div className="mt-3 text-2xl font-extrabold text-white">Listo para auditoria</div>
+              <div className="mt-3 text-2xl font-extrabold text-white">Listo para auditoría</div>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                Estados, certificados y seguimiento en una presentacion mas clara para cumplimiento.
+                Estados, certificados y seguimiento en una presentación más clara para cumplimiento.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export function EnterpriseSection({
               </div>
               <p className="mt-3 text-sm leading-7 text-slate-300">
                 Una sola vista para revisar avance, pendientes, renovaciones y cobertura de equipos
-                sin caer en una estetica de software generico.
+                sin caer en una estética de software genérico.
               </p>
             </div>
           </div>

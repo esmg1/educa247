@@ -20,7 +20,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
         className={cn(
           'absolute inset-x-0 top-0 h-28',
           profile.featured
-            ? 'bg-gradient-to-r from-casst-navy via-casst-blue to-slate-700'
+            ? 'bg-gradient-to-r from-educa-navy via-educa-blue to-slate-700'
             : 'bg-gradient-to-r from-slate-200 via-slate-100 to-slate-50',
         )}
       />
@@ -32,12 +32,12 @@ export function ProfileCard({ profile }: ProfileCardProps) {
                 'flex h-20 w-20 items-center justify-center rounded-[28px] border text-2xl font-extrabold tracking-tight',
                 profile.featured
                   ? 'border-white/40 bg-white/12 text-white backdrop-blur'
-                  : 'border-white bg-white text-casst-navy shadow-float',
+                  : 'border-white bg-white text-educa-navy shadow-float',
               )}
             >
               {profile.initials}
             </div>
-            <div className={cn(profile.featured ? 'pt-8 text-white' : 'pt-8 text-casst-ink')}>
+            <div className={cn(profile.featured ? 'pt-8 text-white' : 'pt-8 text-educa-ink')}>
               <Badge variant={profile.featured ? 'amber' : 'navy'}>{profile.badge}</Badge>
             </div>
           </div>
@@ -51,14 +51,14 @@ export function ProfileCard({ profile }: ProfileCardProps) {
           </div>
         </div>
 
-        <div className={cn('mb-4', 'text-casst-ink')}>
+        <div className={cn('mb-4', 'text-educa-ink')}>
           <h3 className="text-3xl font-extrabold tracking-tight">{profile.name}</h3>
-          <p className={cn('mt-2 max-w-xl text-sm font-semibold uppercase tracking-[0.18em]', 'text-casst-slate')}>
+          <p className={cn('mt-2 max-w-xl text-sm font-semibold uppercase tracking-[0.18em]', 'text-educa-slate')}>
             {profile.role}
           </p>
         </div>
 
-        <p className={cn('max-w-2xl text-sm leading-7', 'text-casst-slate')}>
+        <p className={cn('max-w-2xl text-sm leading-7', 'text-educa-slate')}>
           {profile.bio}
         </p>
 
@@ -68,7 +68,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
               key={area}
               className={cn(
                 'inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold',
-                 'border-slate-200 bg-slate-50 text-casst-slate',
+                 'border-slate-200 bg-slate-50 text-educa-slate',
               )}
             >
               <GraduationCap className="h-3.5 w-3.5" />

@@ -12,8 +12,8 @@ export function LeadershipSection({ profiles }: LeadershipSectionProps) {
     <SectionShell id="equipo" surface="white">
       <SectionHeading
         eyebrow="Equipo directivo"
-        title="Liderazgo academico y desarrollo profesional"
-        description="Una direccion experta que integra diseno formativo, seguridad industrial y desarrollo profesional aplicado."
+        title="Liderazgo académico y desarrollo profesional"
+        description="Una dirección experta que integra diseño formativo, seguridad industrial y desarrollo profesional aplicado."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">

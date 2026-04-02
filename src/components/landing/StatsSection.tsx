@@ -5,15 +5,15 @@ interface StatsSectionProps {
 }
 
 const accentStyles = {
-  red: 'text-casst-red',
-  orange: 'text-casst-orange',
-  green: 'text-casst-green',
+  red: 'text-educa-red',
+  orange: 'text-educa-orange',
+  green: 'text-educa-green',
   charcoal: 'text-white',
 } as const
 
 export function StatsSection({ items }: StatsSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-casst-charcoal py-10 text-white">
+    <section className="relative overflow-hidden bg-educa-charcoal py-10 text-white">
       <div className="absolute inset-0 bg-mesh opacity-70" />
       <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
         {items.map((item) => {

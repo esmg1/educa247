@@ -4,20 +4,20 @@ import { describe, expect, it } from 'vitest'
 
 import App from '../App'
 
-describe('CASST landing page', () => {
+describe('Educa 24/7 landing page', () => {
   it('renders the new industrial hero content', () => {
     render(<App />)
 
     expect(
       screen.getByRole('heading', {
-        name: /formacion, certificacion y control hse para operaciones que no pueden improvisar/i,
+        name: /formación, certificación y control hse para operaciones que no pueden improvisar/i,
       }),
     ).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: /ver servicios/i })).toHaveAttribute('href', '#servicios')
     expect(
       screen.getByRole('img', {
-        name: /operario con casco naranja inspeccionando maquinaria industrial de gran tamano/i,
+        name: /operario con casco naranja inspeccionando maquinaria industrial de gran tamaño/i,
       }),
     ).toBeInTheDocument()
   })
@@ -39,7 +39,7 @@ describe('CASST landing page', () => {
     expect(screen.getByRole('heading', { name: 'Certificaciones' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Capacitaciones HSE' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Mediciones' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Asesorias' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Asesorías' })).toBeInTheDocument()
   })
 
   it('toggles faq accordion state', async () => {
@@ -47,7 +47,7 @@ describe('CASST landing page', () => {
     render(<App />)
 
     const question = screen.getByRole('button', {
-      name: /casst esta pensado solo para cursos en linea/i,
+      name: /educa 24\/7 está pensado solo para cursos en línea/i,
     })
 
     expect(question).toHaveAttribute('aria-expanded', 'true')
@@ -59,7 +59,7 @@ describe('CASST landing page', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    const toggle = screen.getAllByRole('button', { name: /abrir menu/i })[0]
+    const toggle = screen.getAllByRole('button', { name: /abrir menú/i })[0]
     await user.click(toggle)
 
     expect(screen.getByTestId('mobile-panel')).toBeInTheDocument()

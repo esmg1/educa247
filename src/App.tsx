@@ -24,7 +24,7 @@ import {
 
 function App() {
   return (
-    <div className="min-h-screen bg-casst-cloud text-casst-ink">
+    <div className="min-h-screen bg-educa-cloud text-educa-ink">
       <SiteHeader navLinks={navLinks} />
       <main>
         <HeroSection serviceChips={heroServiceChips} features={heroFeatures} />

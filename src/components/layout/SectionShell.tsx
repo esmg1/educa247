@@ -12,9 +12,9 @@ interface SectionShellProps extends PropsWithChildren {
 
 const surfaceClasses = {
   white: 'bg-white',
-  muted: 'bg-casst-sand',
-  sand: 'bg-casst-sand',
-  dark: 'bg-casst-charcoal text-white',
+  muted: 'bg-educa-sand',
+  sand: 'bg-educa-sand',
+  dark: 'bg-educa-charcoal text-white',
 }
 
 export function SectionShell({

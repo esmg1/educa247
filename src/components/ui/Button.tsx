@@ -23,13 +23,13 @@ type NativeButtonProps = SharedProps &
   }
 
 const baseClasses =
-  'inline-flex items-center gap-2 rounded-2xl font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-casst-orange'
+  'inline-flex items-center gap-2 rounded-2xl font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-educa-orange'
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-r from-casst-red to-casst-orange px-5 text-white shadow-edge hover:-translate-y-0.5 hover:brightness-105',
+    'bg-gradient-to-r from-educa-red to-educa-orange px-5 text-white shadow-edge hover:-translate-y-0.5 hover:brightness-105',
   secondary:
-    'border border-casst-mist bg-casst-cream px-5 text-casst-ink hover:-translate-y-0.5 hover:border-casst-orange hover:text-casst-red',
+    'border border-educa-mist bg-educa-cream px-5 text-educa-ink hover:-translate-y-0.5 hover:border-educa-orange hover:text-educa-red',
   'outline-light':
     'border border-white/30 bg-white/5 px-5 text-white hover:-translate-y-0.5 hover:border-white hover:bg-white/12',
 }

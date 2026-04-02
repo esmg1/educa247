@@ -8,9 +8,9 @@ interface SiteFooterProps {
 }
 
 const socialLinks = [
-  { label: 'Email', href: 'mailto:hola@casst.ec', icon: Mail },
+  { label: 'Email', href: 'mailto:hola@educa247.ec', icon: Mail },
   { label: 'WhatsApp', href: 'https://wa.me/593990000000', icon: MessageCircleMore },
-  { label: 'Ubicacion', href: '#contacto', icon: MapPin },
+  { label: 'Ubicación', href: '#contacto', icon: MapPin },
 ]
 
 export function SiteFooter({ contactDetails, groups }: SiteFooterProps) {
@@ -19,27 +19,27 @@ export function SiteFooter({ contactDetails, groups }: SiteFooterProps) {
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.25fr_repeat(3,minmax(0,1fr))] lg:px-8">
         <div className="space-y-5">
           <div className="inline-flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-casst-red to-casst-orange text-white shadow-edge">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-educa-red to-educa-orange text-white shadow-edge">
               <Factory className="h-5 w-5" />
             </div>
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
-                CASST
+                Educa 24/7
               </div>
               <div className="text-lg font-extrabold tracking-tight text-white">
-                Landing industrial
+                Plataforma industrial
               </div>
             </div>
           </div>
 
           <h2 className="max-w-sm text-2xl font-extrabold tracking-tight text-white">
-            Una presencia digital mas visual para vender seguridad, servicio y control.
+            Una presencia digital más visual para vender seguridad, servicio y control.
           </h2>
 
           <div className="space-y-3 text-sm text-slate-300">
             {contactDetails.map((item) => (
               <a key={item.label} href={item.href} className="flex items-center gap-3 transition hover:text-white">
-                <span className="h-2.5 w-2.5 rounded-full bg-casst-orange" />
+                <span className="h-2.5 w-2.5 rounded-full bg-educa-orange" />
                 <span>{item.value}</span>
               </a>
             ))}
@@ -51,7 +51,7 @@ export function SiteFooter({ contactDetails, groups }: SiteFooterProps) {
                 key={link.label}
                 href={link.href}
                 aria-label={link.label}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition hover:border-casst-orange hover:text-casst-orange"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition hover:border-educa-orange hover:text-educa-orange"
               >
                 <Icon className="h-5 w-5" />
               </a>
@@ -77,7 +77,7 @@ export function SiteFooter({ contactDetails, groups }: SiteFooterProps) {
 
       <div className="border-t border-white/8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-5 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <p>(c) 2026 CASST. Home de seguridad industrial y HSE.</p>
+          <p>(c) 2026 Educa 24/7. Plataforma de seguridad industrial y HSE.</p>
           <div className="flex flex-wrap gap-5">
             <a href="#contacto">Privacidad</a>
             <a href="#contacto">Soporte</a>

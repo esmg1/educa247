@@ -11,9 +11,9 @@ const variants = {
   amber: 'bg-orange-100 text-orange-800',
   green: 'bg-emerald-100 text-emerald-800',
   slate: 'bg-stone-100 text-stone-700',
-  navy: 'bg-casst-charcoal/10 text-casst-charcoal',
+  navy: 'bg-educa-charcoal/10 text-educa-charcoal',
   red: 'bg-red-100 text-red-700',
-  charcoal: 'bg-casst-charcoal text-white',
+  charcoal: 'bg-educa-charcoal text-white',
 }
 
 export function Badge({ children, variant = 'slate', className }: BadgeProps) {

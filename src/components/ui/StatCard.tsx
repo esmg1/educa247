@@ -11,8 +11,8 @@ interface StatCardProps {
 }
 
 const toneClasses = {
-  default: 'border-casst-mist bg-white text-casst-ink',
-  navy: 'border-white/10 bg-casst-charcoal text-white',
+  default: 'border-educa-mist bg-white text-educa-ink',
+  navy: 'border-white/10 bg-educa-charcoal text-white',
   amber: 'border-orange-200 bg-orange-50 text-orange-950',
   success: 'border-emerald-200 bg-emerald-50 text-emerald-900',
 }

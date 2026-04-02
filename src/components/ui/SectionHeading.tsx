@@ -20,7 +20,7 @@ export function SectionHeading({
       <div
         className={cn(
           'mb-4 text-xs font-extrabold uppercase tracking-[0.24em]',
-          theme === 'dark' ? 'text-orange-200' : 'text-casst-red',
+          theme === 'dark' ? 'text-orange-200' : 'text-educa-red',
         )}
       >
         {eyebrow}
@@ -28,7 +28,7 @@ export function SectionHeading({
       <h2
         className={cn(
           'text-balance text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[2.8rem]',
-          theme === 'dark' ? 'text-white' : 'text-casst-ink',
+          theme === 'dark' ? 'text-white' : 'text-educa-ink',
         )}
       >
         {title}
@@ -36,7 +36,7 @@ export function SectionHeading({
       <p
         className={cn(
           'mt-5 text-base leading-7 sm:text-lg',
-          theme === 'dark' ? 'text-slate-300' : 'text-casst-slate',
+          theme === 'dark' ? 'text-slate-300' : 'text-educa-slate',
         )}
       >
         {description}

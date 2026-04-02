@@ -35,13 +35,13 @@ export function SiteHeader({ navLinks }: SiteHeaderProps) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 border-b border-white/8 bg-casst-charcoal/88 text-white backdrop-blur-xl transition-shadow duration-300',
+        'sticky top-0 z-50 border-b border-white/8 bg-educa-charcoal/88 text-white backdrop-blur-xl transition-shadow duration-300',
         hasShadow && 'shadow-[0_14px_40px_rgba(24,21,18,0.28)]',
       )}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a href="#inicio" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-casst-red to-casst-orange text-white shadow-edge">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-educa-red to-educa-orange text-white shadow-edge">
             <Factory className="h-5 w-5" />
           </div>
           <div>
@@ -49,7 +49,7 @@ export function SiteHeader({ navLinks }: SiteHeaderProps) {
               Plataforma industrial
             </div>
             <div className="text-lg font-extrabold tracking-tight text-white">
-              CASST
+              Educa 24/7
             </div>
           </div>
         </a>
@@ -77,7 +77,7 @@ export function SiteHeader({ navLinks }: SiteHeaderProps) {
 
         <button
           type="button"
-          aria-label={isMenuOpen ? 'Cerrar menu' : 'Abrir menu'}
+          aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={isMenuOpen}
           className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 text-white transition hover:border-orange-300 hover:text-orange-200 lg:hidden"
           onClick={() => setIsMenuOpen((current) => !current)}
@@ -89,11 +89,11 @@ export function SiteHeader({ navLinks }: SiteHeaderProps) {
       {isMenuOpen ? (
         <div
           data-testid="mobile-panel"
-          className="border-t border-white/8 bg-casst-charcoal px-4 py-4 shadow-panel lg:hidden"
+          className="border-t border-white/8 bg-educa-charcoal px-4 py-4 shadow-panel lg:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-3">
             <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
-              Menu CASST
+              Menú Educa 24/7
             </div>
             {navLinks.map((link) => (
               <a
