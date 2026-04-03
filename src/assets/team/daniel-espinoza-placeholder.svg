@@ -1,0 +1,24 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#0F172A"/>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="614" cy="178" r="176" fill="#F59E0B" fill-opacity="0.27"/>
+  <circle cx="172" cy="856" r="214" fill="#DC2626" fill-opacity="0.19"/>
+  <circle cx="238" cy="220" r="102" fill="#FDE68A" fill-opacity="0.19"/>
+  <path d="M90 808C173 711 272 659 393 648C531 635 654 695 732 806V1000H90V808Z" fill="#101826" fill-opacity="0.96"/>
+  <path d="M404 636C493.47 636 566 563.47 566 474C566 384.53 493.47 312 404 312C314.53 312 242 384.53 242 474C242 563.47 314.53 636 404 636Z" fill="#E7B886"/>
+  <path d="M258 446C259 347 331 272 421 268C500 265 573 319 585 396C593 448 581 505 546 550C529 518 495 495 458 488C389 476 320 493 283 539C264 511 257 479 258 446Z" fill="#182433"/>
+  <path d="M249 577C296 510 362 487 425 490C494 493 556 523 597 586L623 646C548 705 475 732 404 732C327 732 252 705 177 646L205 591C218 568 233 562 249 577Z" fill="#253246"/>
+  <path d="M300 295C336 250 394 226 459 231C520 235 575 267 606 317C566 308 532 316 497 333C444 359 386 363 334 349C319 345 308 338 300 295Z" fill="#0F172A"/>
+  <path d="M316 419C347 393 387 379 425 380C454 381 480 392 503 409C476 427 439 439 392 442C362 444 335 436 316 419Z" fill="#F5D2A1" fill-opacity="0.66"/>
+  <rect x="84" y="76" width="268" height="54" rx="27" fill="#FFFBEB" fill-opacity="0.92"/>
+  <text x="218" y="111" text-anchor="middle" fill="#B91C1C" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="2">SOPORTE TECNICO</text>
+  <text x="88" y="933" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="1">DANIEL ESPINOZA</text>
+  <text x="88" y="971" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="23" font-weight="600" letter-spacing="2">PLACEHOLDER PORTRAIT</text>
+  <defs>
+    <linearGradient id="bg" x1="74" y1="42" x2="728" y2="954" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.46" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#7C2D12"/>
+    </linearGradient>
+  </defs>
+</svg>

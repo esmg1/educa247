@@ -45,6 +45,7 @@ import investigacionAccidentesImage from '../assets/catalog/asesorias/investigac
 import planAnualCapacitacionImage from '../assets/catalog/asesorias/plan-anual-capacitacion.webp'
 import planesEmergenciaImage from '../assets/catalog/asesorias/planes-emergencia.webp'
 import reglamentoHigieneSeguridadImage from '../assets/catalog/asesorias/reglamento-higiene-seguridad.webp'
+import danielEspinozaPlaceholder from '../assets/team/daniel-espinoza-placeholder.svg'
 import heroWorker from '../assets/industrial/hero-worker.jpg'
 import machineryFloor from '../assets/industrial/machinery-floor.jpg'
 import plantFoundry from '../assets/industrial/plant-foundry.jpg'
@@ -290,6 +291,14 @@ export const aboutSection: AboutSectionData = {
         'Impulsa rutas de crecimiento y desarrollo profesional alineadas con certificación, empleabilidad y desempeño operativo.',
       imageSrc: kevinFajardoPlaceholder,
       imageAlt: 'Placeholder de retrato profesional para Kevin Fajardo, Director de Desarrollo Profesional.',
+    },
+    {
+      name: 'Daniel Espinoza',
+      role: 'Analista en Soporte Técnico',
+      summary:
+        'Aporta soporte técnico y coordinación documental con perfil analítico, experiencia administrativa y disposición constante para el trabajo colaborativo.',
+      imageSrc: danielEspinozaPlaceholder,
+      imageAlt: 'Placeholder de retrato profesional para Daniel Espinoza, Analista en Soporte Técnico.',
     },
   ],
   sectors: ['Construcción', 'Energía', 'Manufactura', 'Hidrocarburos', 'Logística', 'Mantenimiento'],

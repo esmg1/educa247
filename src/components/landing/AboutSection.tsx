@@ -80,15 +80,15 @@ export function AboutSection({ section }: AboutSectionProps) {
               Equipo clave
             </div>
             <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-educa-ink sm:text-4xl">
-              Dirección visible, criterio claro.
+              Equipo visible, criterio claro.
             </h3>
           </div>
           <p className="max-w-2xl text-sm font-medium leading-6 text-educa-slate">
-            Perfiles que sostienen operación, dirección académica y desarrollo profesional con lectura directa.
+            Perfiles que sostienen operación, dirección académica, desarrollo profesional y soporte técnico con lectura directa.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {section.teamMembers.map((member) => (
             <article
               key={member.name}
