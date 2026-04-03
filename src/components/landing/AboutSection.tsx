@@ -35,7 +35,7 @@ export function AboutSection({ section }: AboutSectionProps) {
                 Presencia industrial
               </div>
               <div className="mt-3 text-2xl font-extrabold tracking-tight text-educa-ink">
-                Educa 24/7 con lectura comercial más clara.
+                Experiencia aplicada a sectores de alta exigencia.
               </div>
             </div>
           </div>
@@ -80,11 +80,11 @@ export function AboutSection({ section }: AboutSectionProps) {
               Equipo clave
             </div>
             <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-educa-ink sm:text-4xl">
-              Equipo visible, criterio claro.
+              Equipo con experiencia técnica y académica.
             </h3>
           </div>
           <p className="max-w-2xl text-sm font-medium leading-6 text-educa-slate">
-            Perfiles que sostienen operación, dirección académica, desarrollo profesional y soporte técnico con lectura directa.
+            Perfiles que integran operación, dirección académica, desarrollo profesional y soporte técnico para sostener cada servicio.
           </p>
         </div>
 

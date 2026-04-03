@@ -29,7 +29,7 @@ export function PlatformBenefitsSection({
                   Vista operativa
                 </div>
                 <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-educa-ink">
-                  La plataforma funciona como un sistema de gestión formativa
+                  Seguimiento formativo con visibilidad por ruta
                 </h3>
               </div>
               <Badge variant="green">Trazabilidad</Badge>
@@ -74,8 +74,8 @@ export function PlatformBenefitsSection({
         <div>
           <SectionHeading
             eyebrow="Beneficios de plataforma"
-            title="Una experiencia operativamente fuerte, clara para usuarios y útil para coordinación"
-            description="Cada módulo, evaluación y avance se presenta con una estructura pensada para aprendizaje aplicado y seguimiento continuo."
+            title="Herramientas para seguimiento, evaluación y trazabilidad"
+            description="Cada módulo, evaluación y avance se organiza para facilitar aprendizaje aplicado, control documental y seguimiento continuo."
           />
 
           <div className="mt-10 space-y-4">

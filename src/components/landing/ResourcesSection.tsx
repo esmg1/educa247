@@ -13,8 +13,8 @@ export function ResourcesSection({ cards }: ResourcesSectionProps) {
     <SectionShell id="recursos" surface="white">
       <SectionHeading
         eyebrow="Recursos"
-        title="Recursos de apoyo para activar conversaciones comerciales y documentales"
-        description="La sección agrega piezas visibles para descargar, revisar o usar como disparador de conversación sin salir de la landing."
+        title="Recursos de apoyo para la toma de decisiones y la coordinación de servicios"
+        description="Ponemos a disposición materiales de consulta que puedes solicitar para revisar alcances, requisitos y siguientes pasos."
         align="center"
       />
 

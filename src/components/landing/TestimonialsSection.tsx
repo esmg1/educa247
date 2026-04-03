@@ -17,16 +17,16 @@ export function TestimonialsSection({
       <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <SectionHeading
           eyebrow="Prueba institucional"
-          title="Diseño listo para activar testimonios, logos y evidencia de adopción"
-          description="La sección queda preparada para incorporar credenciales validadas sin recurrir a cifras o citas inventadas."
+          title="Referencias y evidencia institucional"
+          description="Testimonios, alianzas y referencias permiten respaldar la experiencia de Educa 24/7 en distintos sectores."
         />
 
         <div className="grid gap-3 rounded-[28px] border border-dashed border-slate-300 bg-slate-50 p-5 text-sm text-educa-slate sm:grid-cols-2">
           {[
-            'Rutas formativas: --',
-            'Horas de contenido: --',
-            'Evaluaciones por módulo: disponible',
-            'Certificación digital: activa',
+            'Capacitación presencial y virtual',
+            'Rutas por línea de servicio',
+            'Evaluaciones y seguimiento',
+            'Certificación y soporte documental',
           ].map((item) => (
             <div key={item} className="rounded-2xl border border-white bg-white px-4 py-3 font-semibold">
               {item}
@@ -64,13 +64,13 @@ export function TestimonialsSection({
 
       <div className="mt-10 rounded-[30px] border border-dashed border-slate-300 bg-slate-50 p-6">
         <div className="mb-3 flex items-center gap-3">
-          <Badge variant="navy">Espacio para logos</Badge>
+          <Badge variant="navy">Referencias sectoriales</Badge>
           <span className="text-sm font-semibold text-educa-slate">
             Instituciones aliadas y empresas clientes
           </span>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
-          {['Logo 1', 'Logo 2', 'Logo 3'].map((logo) => (
+          {['Construcción', 'Energía', 'Manufactura'].map((logo) => (
             <div
               key={logo}
               className="flex h-20 items-center justify-center rounded-[24px] border border-slate-200 bg-white text-sm font-bold uppercase tracking-[0.18em] text-slate-400"

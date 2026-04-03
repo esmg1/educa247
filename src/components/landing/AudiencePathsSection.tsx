@@ -12,8 +12,8 @@ export function AudiencePathsSection({ paths }: AudiencePathsSectionProps) {
     <SectionShell surface="white">
       <SectionHeading
         eyebrow="Elige tu ruta"
-        title="Una plataforma pensada para dos necesidades claras"
-        description="Capacítate de forma individual o gestiona el desarrollo de equipos completos desde una sola plataforma."
+        title="Soluciones para personas y empresas"
+        description="Elige una ruta individual o una atención orientada a equipos, contratistas y responsables de seguridad y salud ocupacional."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">

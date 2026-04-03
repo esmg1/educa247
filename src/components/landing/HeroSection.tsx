@@ -80,13 +80,13 @@ export function HeroSection({ banner }: HeroSectionProps) {
 
             <div className="rounded-[32px] border border-white/10 bg-white/10 p-6 backdrop-blur">
               <div className="text-xs font-extrabold uppercase tracking-[0.22em] text-orange-200">
-                Enfoque visual
+                Cobertura integral
               </div>
               <div className="mt-3 text-2xl font-extrabold tracking-tight text-white">
-                Menos texto, más lectura rápida.
+                Soluciones claras para personas y empresas.
               </div>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                Menú directo, accesos rápidos y grandes fotos para mostrar el valor de cada línea.
+                Certificaciones, capacitaciones, mediciones y asesorías con rutas directas para consultar, cotizar y avanzar.
               </p>
             </div>
           </div>

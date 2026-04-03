@@ -16,9 +16,9 @@ export function CourseCategoriesSection({
       <div className="grid gap-10 xl:grid-cols-[0.78fr_1.22fr]">
         <div className="space-y-6">
           <SectionHeading
-            eyebrow="Programas visibles"
-            title="Rutas técnicas presentadas con más impacto visual y lectura comercial"
-            description="La nueva sección deja de parecer un catálogo SaaS y pasa a sentirse más cercana a operaciones, riesgo y mantenimiento."
+            eyebrow="Programas destacados"
+            title="Rutas técnicas para fortalecer cumplimiento y desempeño en campo"
+            description="Programas orientados a operaciones, mantenimiento, riesgo y supervisión en entornos de trabajo exigentes."
           />
 
           <div className="metal-frame rounded-[34px] p-3">
@@ -35,8 +35,7 @@ export function CourseCategoriesSection({
                 Entrenamiento pensado para frentes donde el error cuesta tiempo, dinero y seguridad
               </h3>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                Iconos, color y fotografía convierten la parrilla de programas en una pieza más
-                comercial y menos genérica.
+                Programas organizados por frente operativo para facilitar la consulta y priorizar necesidades de capacitación.
               </p>
             </div>
           </div>

@@ -25,7 +25,7 @@ export function SiteFooter({ navLinks, contactDetails }: SiteFooterProps) {
           </div>
 
           <p className="max-w-2xl text-sm leading-7 text-slate-300">
-            Home visual para presentar servicios, descargas, aula virtual y contacto con una navegación directa y más fotográfica.
+            Educa 24/7 acompaña procesos de certificación, capacitación, medición y asesoría en seguridad industrial y salud ocupacional.
           </p>
 
           <div className="flex flex-wrap gap-3 text-sm text-slate-300">

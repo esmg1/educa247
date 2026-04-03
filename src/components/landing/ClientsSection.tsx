@@ -13,7 +13,7 @@ export function ClientsSection({ items }: ClientsSectionProps) {
         <SectionHeading
           eyebrow="Clientes y sectores"
           title="Clientes y sectores"
-          description="El bloque reemplaza logos ajenos por sectores visibles en formato neutral, manteniendo la lectura de confianza sin inventar marcas."
+          description="Sectores donde Educa 24/7 acompaña procesos de formación, prevención, cumplimiento y soporte técnico."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

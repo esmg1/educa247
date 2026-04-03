@@ -16,8 +16,8 @@ export function FinalCTASection({ contactDetails, panels }: FinalCTASectionProps
       <div className="relative">
         <SectionHeading
           eyebrow="Contáctanos"
-          title="Contacto directo, accesos rápidos y áreas clave en una sola pieza final."
-          description="La sección de cierre reúne descargas, verificación, contacto y navegación principal con una lectura más ligera."
+          title="Conversemos sobre la necesidad de tu equipo o proyecto."
+          description="Aquí encuentras canales de contacto, acceso al catálogo y rutas para continuar con certificaciones, capacitaciones, mediciones o asesorías."
           theme="dark"
         />
 

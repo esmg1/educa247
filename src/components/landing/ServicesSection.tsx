@@ -39,7 +39,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
       <SectionHeading
         eyebrow="Servicios"
         title="Servicios"
-        description="Cuatro accesos visuales para entrar a certificaciones, capacitaciones, mediciones y asesorías."
+        description="Cuatro líneas de servicio para personas y empresas que requieren formación, evaluación y acompañamiento técnico."
         align="center"
       />
 

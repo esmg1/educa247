@@ -11,8 +11,8 @@ export function HowItWorksSection({ steps }: HowItWorksSectionProps) {
     <SectionShell id="metodologia" surface="muted">
       <SectionHeading
         eyebrow="Así funciona"
-        title="Una ruta simple para activar formación, evaluación y certificación"
-        description="El recorrido está diseñado para reducir fricción, mantener visibilidad y facilitar la toma de decisiones."
+        title="Una ruta clara para diagnosticar, capacitar y certificar"
+        description="Desde la identificación de necesidades hasta la entrega de soportes, el proceso prioriza coordinación y seguimiento."
         align="center"
       />
 

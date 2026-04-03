@@ -19,8 +19,8 @@ export function EnterpriseSection({
         <div>
           <SectionHeading
             eyebrow="Solución para empresas"
-            title="Una home que también vende control, trazabilidad y lectura ejecutiva"
-            description="El nuevo bloque empresarial deja atrás el tono académico plano y muestra seguimiento, cumplimiento y evidencia con un enfoque más corporativo."
+            title="Soluciones para empresas que requieren control y trazabilidad"
+            description="Acompañamos a organizaciones que necesitan seguimiento, evidencia y coordinación por roles, áreas y frentes operativos."
             theme="dark"
           />
 
@@ -89,11 +89,10 @@ export function EnterpriseSection({
                 Coordinacion
               </div>
               <div className="mt-3 text-2xl font-extrabold text-white">
-                Lectura ejecutiva con enfoque industrial
+                Visión ejecutiva para responsables SST
               </div>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                Una sola vista para revisar avance, pendientes, renovaciones y cobertura de equipos
-                sin caer en una estética de software genérico.
+                Consulta avance, pendientes, renovaciones y cobertura por equipo en una vista orientada a seguimiento y cumplimiento.
               </p>
             </div>
           </div>

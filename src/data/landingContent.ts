@@ -233,9 +233,9 @@ export const navLinks: NavLink[] = [
 
 export const heroBanner: HeroBanner = {
   eyebrow: 'Educa 24/7',
-  title: 'Seguridad, formación y control con lectura directa para industria.',
+  title: 'Certificaciones, capacitaciones y control ocupacional para operaciones exigentes.',
   description:
-    'Una landing más visual para certificaciones, capacitaciones, mediciones y asesorías en operaciones reales.',
+    'Acompañamos a personas y empresas con servicios de seguridad industrial y salud ocupacional: certificaciones, capacitaciones HSE, mediciones laborales y asesorías técnicas.',
   primaryCtaLabel: 'Explorar servicios',
   primaryCtaHref: '#servicios',
   secondaryCtaLabel: 'Contáctanos',
@@ -256,7 +256,7 @@ export const aboutSection: AboutSectionData = {
   eyebrow: 'Identidad',
   title: '¿Quiénes Somos?',
   description:
-    'Educa 24/7 presenta una oferta clara para personas y empresas que necesitan formación, control y acompañamiento documental sin perder velocidad comercial.',
+    'Educa 24/7 acompaña a personas y empresas que necesitan formación, evaluación y soporte técnico en seguridad y salud ocupacional, con soluciones aplicables a entornos de trabajo reales.',
   primaryImageSrc: heroWorker,
   primaryImageAlt: 'Operario con casco revisando maquinaria industrial en una planta.',
   secondaryImageSrc: machineryFloor,
@@ -264,7 +264,7 @@ export const aboutSection: AboutSectionData = {
   highlights: [
     { value: '4', label: 'líneas activas', icon: LayoutDashboard },
     { value: 'B2B', label: 'personas y empresas', icon: UsersRound },
-    { value: 'Visual', label: 'lectura comercial', icon: ClipboardCheck },
+    { value: 'HSE', label: 'cumplimiento y prevención', icon: ClipboardCheck },
   ],
   teamMembers: [
     {
@@ -273,7 +273,7 @@ export const aboutSection: AboutSectionData = {
       summary:
         'Coordina la operación técnica y la ejecución de los servicios para convertir la planificación en resultados consistentes en campo.',
       imageSrc: simonMaciasPlaceholder,
-      imageAlt: 'Placeholder de retrato profesional para Simon Macias, Director de Operaciones.',
+      imageAlt: 'Retrato profesional ilustrado de Simon Macias, Director de Operaciones.',
     },
     {
       name: 'María Ortega',
@@ -282,7 +282,7 @@ export const aboutSection: AboutSectionData = {
         'Conduce la visión general del proyecto y la dirección académica para mantener una oferta formativa clara, vigente y aplicable.',
       imageSrc: mariaOrtegaPlaceholder,
       imageAlt:
-        'Placeholder de retrato profesional para María Ortega, Líder General del Proyecto y Directora Académica.',
+        'Retrato profesional ilustrado de María Ortega, Líder General del Proyecto y Directora Académica.',
     },
     {
       name: 'Kevin Fajardo',
@@ -290,7 +290,7 @@ export const aboutSection: AboutSectionData = {
       summary:
         'Impulsa rutas de crecimiento y desarrollo profesional alineadas con certificación, empleabilidad y desempeño operativo.',
       imageSrc: kevinFajardoPlaceholder,
-      imageAlt: 'Placeholder de retrato profesional para Kevin Fajardo, Director de Desarrollo Profesional.',
+      imageAlt: 'Retrato profesional ilustrado de Kevin Fajardo, Director de Desarrollo Profesional.',
     },
     {
       name: 'Daniel Espinoza',
@@ -298,7 +298,7 @@ export const aboutSection: AboutSectionData = {
       summary:
         'Aporta soporte técnico y coordinación documental con perfil analítico, experiencia administrativa y disposición constante para el trabajo colaborativo.',
       imageSrc: danielEspinozaPlaceholder,
-      imageAlt: 'Placeholder de retrato profesional para Daniel Espinoza, Analista en Soporte Técnico.',
+      imageAlt: 'Retrato profesional ilustrado de Daniel Espinoza, Analista en Soporte Técnico.',
     },
   ],
   sectors: ['Construcción', 'Energía', 'Manufactura', 'Hidrocarburos', 'Logística', 'Mantenimiento'],
@@ -310,11 +310,11 @@ export const heroPillars: ServicePillar[] = [
     selectorLabel: 'Certificaciones',
     title: 'Certificaciones por competencias laborales',
     description:
-      'Educa 24/7 presenta rutas para validar desempeño operativo, cumplimiento y criterio técnico en entornos industriales reales.',
+      'Rutas orientadas a validar competencias, cumplimiento y criterio técnico en construcción, energía y operación industrial.',
     highlights: [
       'Programas por funciones y frente operativo',
       'Evaluación con enfoque de evidencia',
-      'Lectura comercial clara para personas y empresas',
+      'Opciones para personas, contratistas y empresas',
     ],
     eyebrow: 'Oferta principal',
     ctaLabel: 'Ver certificaciones',
@@ -326,11 +326,11 @@ export const heroPillars: ServicePillar[] = [
     selectorLabel: 'Capacitaciones',
     title: 'Capacitaciones 100% prácticas en HSE',
     description:
-      'La propuesta prioriza actividades críticas, control preventivo y entrenamiento aplicable a cuadrillas, supervisión y contratistas.',
+      'Programas enfocados en tareas críticas, control preventivo y entrenamiento aplicable a cuadrillas, supervisión y contratistas.',
     highlights: [
       'Alturas, espacios confinados y energía',
       'Brigadas, maniobras y respuesta operativa',
-      'Formato de lectura directa para ventas y coordinación',
+      'Aplicación inmediata en campo y supervisión',
     ],
     eyebrow: 'Entrenamiento aplicado',
     ctaLabel: 'Ver capacitaciones',
@@ -342,11 +342,11 @@ export const heroPillars: ServicePillar[] = [
     selectorLabel: 'Mediciones',
     title: 'Mediciones de factores de riesgo laboral',
     description:
-      'El sitio comunica evaluación técnica de agentes ocupacionales con un lenguaje más cercano a cumplimiento, control y toma de decisiones.',
+      'Evaluamos agentes ocupacionales para respaldar cumplimiento, control preventivo y toma de decisiones técnicas.',
     highlights: [
       'Ruido, gases, iluminación y material particulado',
       'Lectura preventiva con criterio técnico',
-      'Soporte para seguimiento documental y operativo',
+      'Informes útiles para seguimiento técnico y documental',
     ],
     eyebrow: 'Diagnóstico y evaluación',
     ctaLabel: 'Ver mediciones',
@@ -358,11 +358,11 @@ export const heroPillars: ServicePillar[] = [
     selectorLabel: 'Asesorías',
     title: 'Asesorías y consultorías en seguridad y salud ocupacional',
     description:
-      'La home deja visible el acompañamiento en investigación, planes, reglamentos y ejecución documental para operaciones exigentes.',
+      'Acompañamos investigación, planes, reglamentos y gestión documental para operaciones que requieren orden y soporte técnico.',
     highlights: [
       'Soporte para requisitos técnicos y legales',
       'Planes de emergencia y gestión preventiva',
-      'Acompañamiento comercial listo para contacto',
+      'Soporte desde el diagnóstico hasta la ejecución',
     ],
     eyebrow: 'Acompañamiento especializado',
     ctaLabel: 'Ver asesorías',
@@ -374,7 +374,7 @@ export const heroPillars: ServicePillar[] = [
 export const proofItems: ProofItem[] = [
   {
     title: '4 líneas de servicio',
-    description: 'Certificación, capacitación, medición y asesoría integradas en una sola propuesta.',
+    description: 'Certificación, capacitación, medición y asesoría articuladas para responder a necesidades de SST.',
     icon: LayoutDashboard,
   },
   {
@@ -384,7 +384,7 @@ export const proofItems: ProofItem[] = [
   },
   {
     title: 'Acompañamiento documental y operativo',
-    description: 'Mensajes y rutas orientados a cumplimiento, seguimiento y soporte visible en campo.',
+    description: 'Servicios orientados a cumplimiento, seguimiento y soporte visible en campo.',
     icon: ClipboardCheck,
   },
 ]
@@ -444,28 +444,28 @@ export const blogSection: VisualShowcaseSectionData = {
   id: 'blog',
   eyebrow: 'Editorial',
   title: 'Blog',
-  description: 'Tres lecturas rápidas para reforzar cultura HSE sin salir de la landing.',
+  description: 'Contenido breve para reforzar cultura HSE, prevención y buenas prácticas operativas.',
   ctaLabel: 'Ir a contacto',
   ctaHref: '#contacto',
   surface: 'white',
   cards: [
     {
       badge: 'Prevención',
-      title: 'Alturas: inspección visual antes de subir',
+      title: 'Alturas: verificación previa antes de cada maniobra',
       href: '#capacitaciones',
       imageSrc: trabajosAlturasImage,
       imageAlt: 'Trabajador usando protección para maniobras en altura.',
     },
     {
       badge: 'Control de energía',
-      title: 'LOTO: aislar antes de intervenir',
+      title: 'LOTO: aislar, bloquear y verificar antes de intervenir',
       href: '#capacitaciones',
       imageSrc: bloqueoEtiquetadoImage,
       imageAlt: 'Candado industrial colocado sobre un punto de bloqueo.',
     },
     {
       badge: 'Monitoreo',
-      title: 'Mediciones que convierten hallazgos en decisiones',
+      title: 'Mediciones ocupacionales para decidir con evidencia',
       href: '#mediciones',
       imageSrc: gasesImage,
       imageAlt: 'Detector portátil sostenido por un operario para medición en campo.',
@@ -477,21 +477,21 @@ export const virtualClassSection: VisualShowcaseSectionData = {
   id: 'aula-virtual',
   eyebrow: 'Entrenamiento digital',
   title: 'Aula Virtual',
-  description: 'Una vitrina estática del tipo de experiencia que Educa 24/7 puede presentar online.',
+  description: 'Accesos guiados a contenidos virtuales para reforzar capacitación, seguimiento y actualización del personal.',
   ctaLabel: 'Solicitar acceso',
   ctaHref: '#contacto',
   surface: 'sand',
   cards: [
     {
       badge: 'Rutas activas',
-      title: 'Cursos organizados por frente operativo',
+      title: 'Programas organizados por línea de servicio',
       href: '#contacto',
       imageSrc: formacionFormadoresImage,
       imageAlt: 'Grupo de trabajadores con casco durante una sesión de formación.',
     },
     {
       badge: 'Seguimiento',
-      title: 'Avance visible para equipos y supervisión',
+      title: 'Seguimiento de avance para equipos y responsables',
       href: '#contacto',
       imageSrc: psicosocialesImage,
       imageAlt: 'Equipo reunido alrededor de una mesa de trabajo.',
@@ -510,7 +510,7 @@ export const downloadSection: VisualShowcaseSectionData = {
   id: 'descargas',
   eyebrow: 'Descargas',
   title: 'Recursos para Descargar',
-  description: 'Recursos estáticos con enfoque comercial y documental, listos para mostrar interés.',
+  description: 'Materiales de apoyo que compartimos por solicitud para revisar servicios, requisitos y próximos pasos.',
   ctaLabel: 'Solicitar recursos',
   ctaHref: '#contacto',
   surface: 'white',
@@ -543,7 +543,7 @@ export const resourceCards: ResourceCard[] = [
   {
     title: 'Catálogo de servicios',
     description:
-      'Resumen comercial para presentar la oferta técnica de Educa 24/7 con foco en certificación, capacitación y soporte.',
+      'Resumen de servicios, alcances y sectores atendidos para compartir con responsables de SST y operación.',
     icon: FileBadge2,
     ctaLabel: 'Solicitar catálogo',
     ctaHref: '#contacto',
@@ -551,7 +551,7 @@ export const resourceCards: ResourceCard[] = [
   {
     title: 'Checklist HSE',
     description:
-      'Punto de partida para revisar actividades críticas y conversar sobre necesidades de entrenamiento o control.',
+      'Guía inicial para revisar tareas críticas y detectar necesidades de entrenamiento, medición o asesoría.',
     icon: ClipboardCheck,
     ctaLabel: 'Explorar servicios',
     ctaHref: '#servicios',
@@ -559,7 +559,7 @@ export const resourceCards: ResourceCard[] = [
   {
     title: 'Verificación documental',
     description:
-      'Bloque de apoyo para orientar conversaciones sobre evidencia, trazabilidad y soporte documental.',
+      'Orientación para revisar soportes, vigencias y evidencias antes de auditorías, contrataciones o seguimiento interno.',
     icon: ShieldCheck,
     ctaLabel: 'Ir a contacto',
     ctaHref: '#contacto',
@@ -572,7 +572,7 @@ export const catalogSections: CatalogSectionData[] = [
     eyebrow: 'Nuestras Certificaciones',
     title: 'Certificaciones por competencias laborales para frentes operativos exigentes',
     description:
-      'Catálogo visual de certificaciones para construcción, energía, seguridad y operación eléctrica.',
+      'Programas orientados a construcción, energía, seguridad industrial y operación eléctrica.',
     accent: 'red',
     surface: 'white',
     items: [
@@ -678,7 +678,7 @@ export const catalogSections: CatalogSectionData[] = [
     eyebrow: 'Nuestras Mediciones',
     title: 'Mediciones laborales para evaluar exposición y priorizar acciones correctivas',
     description:
-      'Evaluaciones ocupacionales con lectura rápida para control, cumplimiento y seguimiento técnico.',
+      'Evaluaciones ocupacionales para medir exposición, priorizar controles y sustentar decisiones técnicas.',
     accent: 'green',
     surface: 'white',
     items: [
@@ -731,7 +731,7 @@ export const catalogSections: CatalogSectionData[] = [
     eyebrow: 'Nuestras Asesorías',
     title: 'Asesorías para sostener sistemas, investigación y soporte documental',
     description:
-      'Acompañamiento documental y operativo para investigación, planes, reglamentos y gestión preventiva.',
+      'Acompañamiento técnico y documental para investigación, planes, reglamentos y gestión preventiva.',
     accent: 'charcoal',
     surface: 'sand',
     items: [
@@ -796,7 +796,7 @@ export const trustTiles: TrustTile[] = [
 
 export const contactDetails: ContactDetail[] = [
   {
-    label: 'Correo comercial',
+    label: 'Correo de atención',
     value: 'hola@educa247.ec',
     href: 'mailto:hola@educa247.ec',
   },
@@ -815,7 +815,7 @@ export const contactDetails: ContactDetail[] = [
 export const footerPanels: FooterPanel[] = [
   {
     title: 'Descargar catálogo',
-    description: 'Solicita piezas visuales para revisar la oferta desde una sola landing.',
+    description: 'Solicita el portafolio para revisar líneas de servicio, alcances y sectores atendidos.',
     icon: FileBadge2,
     links: [
       { label: 'Ver recursos', href: '#descargas' },
@@ -824,7 +824,7 @@ export const footerPanels: FooterPanel[] = [
   },
   {
     title: 'Verificación de certificados',
-    description: 'Accesos rápidos para llevar la conversación hacia certificaciones y soporte.',
+    description: 'Orientamos la consulta de certificaciones y el soporte asociado a cada proceso formativo.',
     icon: BadgeCheck,
     links: [
       { label: 'Ver certificaciones', href: '#certificaciones' },
@@ -833,14 +833,14 @@ export const footerPanels: FooterPanel[] = [
   },
   {
     title: 'Contáctanos',
-    description: 'Canales actuales de Educa 24/7 para coordinación inicial y seguimiento comercial.',
+    description: 'Canales de atención para solicitudes, cotizaciones y coordinación inicial.',
     icon: UsersRound,
     details: contactDetails.map((item) => `${item.label}: ${item.value}`),
     links: [{ label: 'Ir al inicio', href: '#inicio' }],
   },
   {
     title: 'Áreas de interés',
-    description: 'Recorrido rápido por los bloques principales de la nueva home.',
+    description: 'Accesos a los bloques principales para revisar la oferta y profundizar por línea de servicio.',
     icon: Building2,
     links: [
       { label: '¿Quiénes Somos?', href: '#quienes-somos' },

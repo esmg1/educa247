@@ -12,8 +12,8 @@ export function TrustBar({ sectors }: TrustBarProps) {
       <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <SectionHeading
           eyebrow="Sectores"
-          title="Un bloque de confianza para rubros donde la seguridad se evalúa en campo"
-          description="En lugar de logos ficticios, la sección muestra frentes productivos y badges industriales listos para evolucionar cuando lleguen activos reales del cliente."
+          title="Sectores donde la prevención y el cumplimiento son críticos"
+          description="Experiencia adaptable a frentes productivos que exigen formación, control y soporte técnico constante."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -32,7 +32,7 @@ export function TrustBar({ sectors }: TrustBarProps) {
                   {sector.label}
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-educa-slate">
-                  Comunicación adaptable para equipos, supervisores y coordinadores de este sector.
+                  Acompañamiento adaptable para equipos, supervisores y coordinadores de este sector.
                 </p>
               </article>
             )
