@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
 import App from '../App'
-import { catalogSections } from '../data/landingContent'
+import { aboutSection, catalogSections } from '../data/landingContent'
 
 const certificationTitles = [
   'Prevención de Riesgos Laborales: Construcción y Obras Públicas',
@@ -82,6 +82,22 @@ describe('Educa 24/7 landing page', () => {
         name: 'Recursos de apoyo para activar conversaciones comerciales y documentales',
       }),
     ).not.toBeInTheDocument()
+  })
+
+  it('renders the team profiles inside quienes somos with their titles and placeholder images', () => {
+    render(<App />)
+
+    const about = document.querySelector('#quienes-somos')
+    expect(about).not.toBeNull()
+
+    const aboutScope = within(about as HTMLElement)
+
+    aboutSection.teamMembers.forEach((member) => {
+      expect(aboutScope.getByRole('heading', { name: member.name })).toBeInTheDocument()
+      expect(aboutScope.getByText(member.role)).toBeInTheDocument()
+      expect(aboutScope.getByText(member.summary)).toBeInTheDocument()
+      expect(aboutScope.getByAltText(member.imageAlt)).toBeInTheDocument()
+    })
   })
 
   it('keeps the four service catalogs image-led under servicios', () => {

@@ -1,0 +1,24 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#241913"/>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="618" cy="176" r="178" fill="#F59E0B" fill-opacity="0.32"/>
+  <circle cx="159" cy="842" r="202" fill="#DC2626" fill-opacity="0.2"/>
+  <circle cx="241" cy="251" r="94" fill="#FDE68A" fill-opacity="0.22"/>
+  <path d="M86 810C168 712 269 658 389 648C529 636 654 696 735 807V1000H86V810Z" fill="#271A16" fill-opacity="0.96"/>
+  <path d="M403 638C492.47 638 565 565.47 565 476C565 386.53 492.47 314 403 314C313.53 314 241 386.53 241 476C241 565.47 313.53 638 403 638Z" fill="#F1C48E"/>
+  <path d="M263 450C257 352 327 263 425 261C504 259 579 321 587 409C591 459 576 510 544 553C528 520 490 499 457 498C377 494 312 528 273 570C262 533 260 494 263 450Z" fill="#3F2A22"/>
+  <path d="M242 579C291 507 360 486 420 486C494 486 560 520 605 589L635 647C557 706 479 734 402 734C327 734 253 706 173 647L206 594C218 574 231 567 242 579Z" fill="#5A382C"/>
+  <path d="M301 308C336 263 392 236 454 237C517 238 574 270 608 317C566 311 530 321 494 338C445 362 389 367 338 354C324 350 312 343 301 308Z" fill="#42291F"/>
+  <path d="M315 422C346 394 385 378 425 378C455 378 482 388 506 404C476 427 437 440 388 442C359 443 334 436 315 422Z" fill="#F6D8A9" fill-opacity="0.7"/>
+  <rect x="82" y="74" width="288" height="54" rx="27" fill="#FFF7ED" fill-opacity="0.92"/>
+  <text x="226" y="110" text-anchor="middle" fill="#B45309" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">DIRECCION ACADEMICA</text>
+  <text x="88" y="933" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="1">MARIA ORTEGA</text>
+  <text x="88" y="971" fill="#F3E8D6" font-family="Arial, sans-serif" font-size="23" font-weight="600" letter-spacing="2">PLACEHOLDER PORTRAIT</text>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="40" x2="735" y2="958" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3F2A22"/>
+      <stop offset="0.5" stop-color="#7C2D12"/>
+      <stop offset="1" stop-color="#1F2937"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,24 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#111827"/>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="622" cy="172" r="176" fill="#EF4444" fill-opacity="0.28"/>
+  <circle cx="168" cy="846" r="208" fill="#F59E0B" fill-opacity="0.22"/>
+  <circle cx="220" cy="228" r="96" fill="#FDE68A" fill-opacity="0.18"/>
+  <path d="M88 804C169 710 268 658 390 646C529 633 655 693 734 804V1000H88V804Z" fill="#0F172A" fill-opacity="0.96"/>
+  <path d="M401 634C489.918 634 562 561.918 562 473C562 384.082 489.918 312 401 312C312.082 312 240 384.082 240 473C240 561.918 312.082 634 401 634Z" fill="#E8B784"/>
+  <path d="M259 438C260 346 329 274 417 268C499 262 573 317 587 394C596 445 585 502 552 547C536 517 501 494 463 488C392 476 319 492 283 537C264 507 257 472 259 438Z" fill="#16202D"/>
+  <path d="M250 573C294 510 363 486 425 489C493 492 553 523 595 583L622 645C545 704 473 732 401 732C327 732 253 705 176 646L206 590C219 568 235 560 250 573Z" fill="#233244"/>
+  <path d="M292 296C327 251 386 226 452 228C515 231 572 264 606 315C566 307 530 315 495 332C443 357 386 362 334 349C320 346 307 338 292 296Z" fill="#111827"/>
+  <path d="M313 417C344 391 386 378 425 380C452 382 480 391 503 409C477 426 440 438 393 441C362 443 334 436 313 417Z" fill="#F5D2A1" fill-opacity="0.66"/>
+  <rect x="84" y="76" width="304" height="54" rx="27" fill="#FFFBEB" fill-opacity="0.92"/>
+  <text x="236" y="111" text-anchor="middle" fill="#B91C1C" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="2">DESARROLLO PROFESIONAL</text>
+  <text x="88" y="933" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="1">KEVIN FAJARDO</text>
+  <text x="88" y="971" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="23" font-weight="600" letter-spacing="2">PLACEHOLDER PORTRAIT</text>
+  <defs>
+    <linearGradient id="bg" x1="68" y1="38" x2="726" y2="954" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="0.52" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#7C2D12"/>
+    </linearGradient>
+  </defs>
+</svg>

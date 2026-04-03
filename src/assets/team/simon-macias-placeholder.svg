@@ -1,0 +1,24 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#131A23"/>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="645" cy="174" r="170" fill="#F97316" fill-opacity="0.34"/>
+  <circle cx="164" cy="870" r="210" fill="#DC2626" fill-opacity="0.24"/>
+  <circle cx="254" cy="226" r="104" fill="#FDE68A" fill-opacity="0.22"/>
+  <path d="M96 792C171 703 267 654 383 645C514 635 637 691 726 797V1000H96V792Z" fill="#0F172A" fill-opacity="0.95"/>
+  <path d="M400 628C487.261 628 558 557.261 558 470C558 382.739 487.261 312 400 312C312.739 312 242 382.739 242 470C242 557.261 312.739 628 400 628Z" fill="#F1C27D"/>
+  <path d="M541 431C545 362 498 300 418 286C349 274 277 320 255 394C241 441 249 497 284 543C292 518 329 495 356 489C416 475 492 492 533 541C546 509 553 471 541 431Z" fill="#0F172A"/>
+  <path d="M287 533C323 491 391 470 453 476C516 482 571 519 596 582L622 646C546 704 474 731 401 731C325 731 253 704 178 646L208 579C228 545 254 523 287 533Z" fill="#263445"/>
+  <path d="M312 413C331 390 361 373 392 371C419 369 445 379 467 397C438 418 398 430 352 432C337 433 323 426 312 413Z" fill="#F5D7A1" fill-opacity="0.72"/>
+  <path d="M282 273C318 224 380 195 448 199C518 204 585 244 619 304C577 289 544 297 507 317C460 341 407 346 356 334C328 328 301 314 282 273Z" fill="#111827" fill-opacity="0.88"/>
+  <rect x="84" y="76" width="236" height="54" rx="27" fill="#FFF7ED" fill-opacity="0.9"/>
+  <text x="202" y="111" text-anchor="middle" fill="#C2410C" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">OPERACIONES</text>
+  <text x="88" y="933" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="1">SIMON MACIAS</text>
+  <text x="88" y="971" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="23" font-weight="600" letter-spacing="2">PLACEHOLDER PORTRAIT</text>
+  <defs>
+    <linearGradient id="bg" x1="86" y1="48" x2="714" y2="948" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937"/>
+      <stop offset="0.48" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+</svg>

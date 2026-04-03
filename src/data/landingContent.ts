@@ -48,6 +48,9 @@ import reglamentoHigieneSeguridadImage from '../assets/catalog/asesorias/reglame
 import heroWorker from '../assets/industrial/hero-worker.jpg'
 import machineryFloor from '../assets/industrial/machinery-floor.jpg'
 import plantFoundry from '../assets/industrial/plant-foundry.jpg'
+import kevinFajardoPlaceholder from '../assets/team/kevin-fajardo-placeholder.svg'
+import mariaOrtegaPlaceholder from '../assets/team/maria-ortega-placeholder.svg'
+import simonMaciasPlaceholder from '../assets/team/simon-macias-placeholder.svg'
 
 export type SectionId =
   | 'inicio'
@@ -99,6 +102,14 @@ export interface AboutHighlight {
   icon: LucideIcon
 }
 
+export interface TeamMember {
+  name: string
+  role: string
+  summary: string
+  imageSrc: string
+  imageAlt: string
+}
+
 export interface AboutSectionData {
   eyebrow: string
   title: string
@@ -108,6 +119,7 @@ export interface AboutSectionData {
   secondaryImageSrc: string
   secondaryImageAlt: string
   highlights: AboutHighlight[]
+  teamMembers: TeamMember[]
   sectors: string[]
 }
 
@@ -252,6 +264,33 @@ export const aboutSection: AboutSectionData = {
     { value: '4', label: 'líneas activas', icon: LayoutDashboard },
     { value: 'B2B', label: 'personas y empresas', icon: UsersRound },
     { value: 'Visual', label: 'lectura comercial', icon: ClipboardCheck },
+  ],
+  teamMembers: [
+    {
+      name: 'Simon Macias',
+      role: 'Director de Operaciones',
+      summary:
+        'Coordina la operación técnica y la ejecución de los servicios para convertir la planificación en resultados consistentes en campo.',
+      imageSrc: simonMaciasPlaceholder,
+      imageAlt: 'Placeholder de retrato profesional para Simon Macias, Director de Operaciones.',
+    },
+    {
+      name: 'María Ortega',
+      role: 'Líder General del Proyecto y Directora Académica',
+      summary:
+        'Conduce la visión general del proyecto y la dirección académica para mantener una oferta formativa clara, vigente y aplicable.',
+      imageSrc: mariaOrtegaPlaceholder,
+      imageAlt:
+        'Placeholder de retrato profesional para María Ortega, Líder General del Proyecto y Directora Académica.',
+    },
+    {
+      name: 'Kevin Fajardo',
+      role: 'Director de Desarrollo Profesional',
+      summary:
+        'Impulsa rutas de crecimiento y desarrollo profesional alineadas con certificación, empleabilidad y desempeño operativo.',
+      imageSrc: kevinFajardoPlaceholder,
+      imageAlt: 'Placeholder de retrato profesional para Kevin Fajardo, Director de Desarrollo Profesional.',
+    },
   ],
   sectors: ['Construcción', 'Energía', 'Manufactura', 'Hidrocarburos', 'Logística', 'Mantenimiento'],
 }
