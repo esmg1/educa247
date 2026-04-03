@@ -10,35 +10,38 @@ interface CatalogSectionProps {
 const accentStyles: Record<
   AccentTone,
   {
-    icon: string
-    bar: string
     badge: string
+    card: string
   }
 > = {
   red: {
-    icon: 'bg-red-100 text-educa-red',
-    bar: 'from-educa-red via-educa-orange to-transparent',
-    badge: 'bg-red-100 text-red-700',
+    badge: 'bg-white/92 text-red-700 ring-1 ring-red-200/80',
+    card: 'shadow-[0_24px_54px_rgba(157,37,37,0.16)]',
   },
   orange: {
-    icon: 'bg-orange-100 text-educa-orange',
-    bar: 'from-educa-orange via-orange-300 to-transparent',
-    badge: 'bg-orange-100 text-orange-700',
+    badge: 'bg-white/92 text-orange-700 ring-1 ring-orange-200/80',
+    card: 'shadow-[0_24px_54px_rgba(206,112,23,0.18)]',
   },
   green: {
-    icon: 'bg-emerald-100 text-educa-green',
-    bar: 'from-educa-green via-emerald-300 to-transparent',
-    badge: 'bg-emerald-100 text-emerald-700',
+    badge: 'bg-white/92 text-emerald-700 ring-1 ring-emerald-200/80',
+    card: 'shadow-[0_24px_54px_rgba(43,123,79,0.18)]',
   },
   charcoal: {
-    icon: 'bg-stone-200 text-educa-charcoal',
-    bar: 'from-educa-charcoal via-educa-blue to-transparent',
-    badge: 'bg-stone-200 text-educa-charcoal',
+    badge: 'bg-white/92 text-educa-charcoal ring-1 ring-stone-300/80',
+    card: 'shadow-[0_24px_54px_rgba(24,21,18,0.2)]',
   },
 }
 
+const sectionLabels = {
+  certificaciones: 'Certificaciones',
+  capacitaciones: 'Capacitaciones',
+  mediciones: 'Mediciones',
+  asesorias: 'Asesorías',
+} as const
+
 export function CatalogSection({ section }: CatalogSectionProps) {
   const accent = accentStyles[section.accent]
+  const sectionLabel = sectionLabels[section.id]
 
   return (
     <SectionShell id={section.id} surface={section.surface} className={section.surface === 'sand' ? 'section-grid' : ''}>
@@ -56,26 +59,32 @@ export function CatalogSection({ section }: CatalogSectionProps) {
 
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {section.items.map((item) => {
-            const Icon = item.icon
-
             return (
               <article
                 key={item.title}
-                className="relative overflow-hidden rounded-[30px] border border-educa-mist bg-white p-6 shadow-[0_18px_36px_rgba(24,21,18,0.08)]"
+                className={`group relative isolate aspect-[4/5] overflow-hidden rounded-[30px] border border-white/40 bg-educa-charcoal ${accent.card}`}
               >
-                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${accent.bar}`} />
-                <div className="flex items-start justify-between gap-4">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${accent.icon}`}>
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <span className={`rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] ${accent.badge}`}>
-                    Educa 24/7
+                <img
+                  src={item.imageSrc}
+                  alt={item.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                  data-testid="catalog-image"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out motion-reduce:transition-none md:group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(24,21,18,0.92)] via-[rgba(24,21,18,0.4)] to-transparent" />
+                <div className="absolute inset-x-0 top-0 flex items-start justify-between p-4 sm:p-5">
+                  <span
+                    className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] backdrop-blur-sm ${accent.badge}`}
+                  >
+                    {sectionLabel}
                   </span>
                 </div>
-                <h3 className="mt-5 text-xl font-extrabold tracking-tight text-educa-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-educa-slate">{item.description}</p>
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <h3 className="max-w-[18ch] text-[1.05rem] font-extrabold leading-tight tracking-tight text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.35)] sm:text-[1.15rem]">
+                    {item.title}
+                  </h3>
+                </div>
               </article>
             )
           })}

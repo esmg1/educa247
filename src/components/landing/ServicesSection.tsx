@@ -11,30 +11,25 @@ interface ServicesSectionProps {
 const accentStyles: Record<
   AccentTone,
   {
-    bar: string
-    icon: string
-    label: string
+    badge: string
+    chip: string
   }
 > = {
   red: {
-    bar: 'from-educa-red via-educa-orange to-transparent',
-    icon: 'bg-red-100 text-educa-red',
-    label: 'text-educa-red',
+    badge: 'bg-white/92 text-red-700',
+    chip: 'border-red-200/70 bg-red-50/92 text-red-700',
   },
   orange: {
-    bar: 'from-educa-orange via-orange-300 to-transparent',
-    icon: 'bg-orange-100 text-educa-orange',
-    label: 'text-educa-orange',
+    badge: 'bg-white/92 text-orange-700',
+    chip: 'border-orange-200/70 bg-orange-50/92 text-orange-700',
   },
   green: {
-    bar: 'from-educa-green via-emerald-300 to-transparent',
-    icon: 'bg-emerald-100 text-educa-green',
-    label: 'text-educa-green',
+    badge: 'bg-white/92 text-emerald-700',
+    chip: 'border-emerald-200/70 bg-emerald-50/92 text-emerald-700',
   },
   charcoal: {
-    bar: 'from-educa-charcoal via-educa-blue to-transparent',
-    icon: 'bg-stone-200 text-educa-charcoal',
-    label: 'text-educa-charcoal',
+    badge: 'bg-white/92 text-educa-charcoal',
+    chip: 'border-stone-200/70 bg-stone-50/92 text-educa-charcoal',
   },
 }
 
@@ -42,57 +37,63 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   return (
     <SectionShell id="servicios" surface="sand" className="section-grid">
       <SectionHeading
-        eyebrow="¿Qué es lo que hacemos?"
-        title="¿Qué es lo que hacemos?"
-        description="La home ahora presenta las cuatro líneas comerciales principales con lenguaje directo, color y saltos claros hacia cada catálogo."
+        eyebrow="Servicios"
+        title="Servicios"
+        description="Cuatro accesos visuales para entrar a certificaciones, capacitaciones, mediciones y asesorías."
         align="center"
       />
 
-      <div className="mt-12 grid gap-6 xl:grid-cols-4">
+      <div className="mt-12 grid gap-6 xl:grid-cols-2">
         {services.map((service) => {
-          const Icon = service.icon
           const accent = accentStyles[service.accent]
 
           return (
             <article
               key={service.title}
-              className="relative overflow-hidden rounded-[32px] border border-educa-mist bg-white p-6 shadow-float"
+              className="group relative isolate aspect-[16/11] overflow-hidden rounded-[34px] border border-white/30 bg-educa-charcoal shadow-[0_28px_60px_rgba(24,21,18,0.18)]"
             >
-              <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${accent.bar}`} />
+              <img
+                src={service.imageSrc}
+                alt={service.imageAlt}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out motion-reduce:transition-none md:group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(24,21,18,0.92)] via-[rgba(24,21,18,0.35)] to-transparent" />
 
-              <div className="flex items-start justify-between gap-4">
-                <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${accent.icon}`}>
-                  <Icon className="h-7 w-7" />
-                </div>
-                <span className={`text-xs font-extrabold uppercase tracking-[0.24em] ${accent.label}`}>
+              <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5">
+                <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.24em] ${accent.badge}`}>
                   Educa 24/7
                 </span>
               </div>
 
-              <h2 className="mt-6 text-2xl font-extrabold tracking-tight text-educa-ink">
-                {service.title}
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-educa-slate">{service.description}</p>
+              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                <h2 className="max-w-[18ch] text-[1.55rem] font-extrabold tracking-tight text-white sm:text-[1.85rem]">
+                  {service.title}
+                </h2>
+                <p className="mt-3 max-w-[38ch] text-sm leading-7 text-slate-200">
+                  {service.description}
+                </p>
 
-              <div className="mt-6 space-y-3">
-                {service.bullets.map((bullet) => (
-                  <div
-                    key={bullet}
-                    className="flex items-center gap-3 rounded-2xl bg-educa-cloud px-4 py-3 text-sm font-semibold text-educa-ink"
-                  >
-                    <span className={`h-2.5 w-2.5 rounded-full ${accent.icon}`} />
-                    {bullet}
-                  </div>
-                ))}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {service.bullets.map((bullet) => (
+                    <span
+                      key={bullet}
+                      className={`rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] ${accent.chip}`}
+                    >
+                      {bullet}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={service.ctaHref}
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-white"
+                >
+                  {service.ctaLabel}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
-
-              <a
-                href={service.ctaHref}
-                className={`mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] ${accent.label}`}
-              >
-                {service.ctaLabel}
-                <ArrowRight className="h-4 w-4" />
-              </a>
             </article>
           )
         })}

@@ -25,7 +25,7 @@ export function SiteFooter({ navLinks, contactDetails }: SiteFooterProps) {
           </div>
 
           <p className="max-w-2xl text-sm leading-7 text-slate-300">
-            Landing comercial inspirada en la estructura de Insistec, ajustada a la identidad y a los servicios visibles de Educa 24/7.
+            Home visual para presentar servicios, descargas, aula virtual y contacto con una navegación directa y más fotográfica.
           </p>
 
           <div className="flex flex-wrap gap-3 text-sm text-slate-300">
@@ -56,7 +56,8 @@ export function SiteFooter({ navLinks, contactDetails }: SiteFooterProps) {
           <div className="flex flex-wrap gap-5">
             <a href="#contacto">Contacto</a>
             <a href="#servicios">Servicios</a>
-            <a href="#clientes">Clientes</a>
+            <a href="#blog">Blog</a>
+            <a href="#descargas">Descargas</a>
           </div>
         </div>
       </div>

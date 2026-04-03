@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
 import App from '../App'
+import { catalogSections } from '../data/landingContent'
 
 const certificationTitles = [
   'Prevención de Riesgos Laborales: Construcción y Obras Públicas',
@@ -22,80 +23,68 @@ const trainingTitles = [
   'Bloqueo y Etiquetado',
 ]
 
+const hiddenCatalogDescriptions = [
+  'Ruta orientada a control preventivo, supervisión y ejecución segura en obra.',
+  'Entrenamiento sobre inspección, anclajes, ejecución y control de tareas en altura.',
+  'Evaluación de presencia de partículas en ambientes de trabajo y frentes de operación.',
+  'Soporte para análisis, documentación y planes de acción posteriores al evento.',
+]
+
 describe('Educa 24/7 landing page', () => {
-  it('renders the tabbed hero and switches between service pillars', async () => {
-    const user = userEvent.setup()
+  it('renders the new flat navigation with exact menu order and a visual-only search box', () => {
     render(<App />)
 
-    expect(
-      screen.getByRole('heading', {
-        level: 1,
-        name: 'Certificaciones por competencias laborales',
-      }),
-    ).toBeInTheDocument()
+    const desktopNav = screen.getByTestId('desktop-nav')
+    const navLinks = within(desktopNav).getAllByRole('link')
 
-    await user.click(screen.getByRole('tab', { name: /capacitaciones/i }))
-    expect(
-      screen.getByRole('heading', {
-        level: 1,
-        name: 'Capacitaciones 100% prácticas en HSE',
-      }),
-    ).toBeInTheDocument()
+    expect(navLinks.map((link) => link.textContent?.trim())).toEqual([
+      'Inicio',
+      '¿Quiénes Somos?',
+      'Servicios',
+      'Blog',
+      'Aula Virtual',
+      'Recursos para Descargar',
+      'Contáctanos',
+    ])
 
-    await user.click(screen.getByRole('tab', { name: /mediciones/i }))
-    expect(
-      screen.getByRole('heading', {
-        level: 1,
-        name: 'Mediciones de factores de riesgo laboral',
-      }),
-    ).toBeInTheDocument()
-
-    await user.click(screen.getByRole('tab', { name: /asesorías/i }))
-    expect(
-      screen.getByRole('heading', {
-        level: 1,
-        name: 'Asesorías y consultorías en seguridad y salud ocupacional',
-      }),
-    ).toBeInTheDocument()
-  })
-
-  it('renders grouped navigation with service child anchors', async () => {
-    const user = userEvent.setup()
-    render(<App />)
-
-    expect(screen.getAllByRole('link', { name: 'Inicio' })[0]).toHaveAttribute('href', '#inicio')
-    expect(screen.getAllByRole('link', { name: 'Servicios' })[0]).toHaveAttribute('href', '#servicios')
-    expect(screen.getAllByRole('link', { name: 'Recursos' })[0]).toHaveAttribute('href', '#recursos')
-    expect(screen.getAllByRole('link', { name: 'Clientes' })[0]).toHaveAttribute('href', '#clientes')
-    expect(screen.getAllByRole('link', { name: 'Contacto' })[0]).toHaveAttribute('href', '#contacto')
-
-    await user.click(screen.getAllByRole('button', { name: /abrir panel de servicios/i })[0])
-
-    const servicesPanel = screen.getByTestId('desktop-services-panel')
-
-    expect(within(servicesPanel).getByRole('link', { name: /ver todos los servicios/i })).toHaveAttribute(
-      'href',
+    expect(navLinks.map((link) => link.getAttribute('href'))).toEqual([
+      '#inicio',
+      '#quienes-somos',
       '#servicios',
-    )
-    expect(within(servicesPanel).getByRole('link', { name: 'Certificaciones' })).toHaveAttribute(
-      'href',
-      '#certificaciones',
-    )
-    expect(within(servicesPanel).getByRole('link', { name: 'Capacitaciones' })).toHaveAttribute(
-      'href',
-      '#capacitaciones',
-    )
-    expect(within(servicesPanel).getByRole('link', { name: 'Mediciones' })).toHaveAttribute(
-      'href',
-      '#mediciones',
-    )
-    expect(within(servicesPanel).getByRole('link', { name: 'Asesorías' })).toHaveAttribute(
-      'href',
-      '#asesorias',
-    )
+      '#blog',
+      '#aula-virtual',
+      '#descargas',
+      '#contacto',
+    ])
+
+    const search = screen.getByPlaceholderText('Buscar...')
+    expect(search).toHaveAttribute('readonly')
+    expect(screen.queryByTestId('desktop-services-panel')).not.toBeInTheDocument()
+    expect(within(desktopNav).queryByRole('link', { name: 'Capacitaciones' })).not.toBeInTheDocument()
   })
 
-  it('renders the exact certification and training catalog titles', () => {
+  it('renders the new homepage sections and removes the old clients/resources structure', () => {
+    render(<App />)
+
+    expect(screen.getAllByRole('heading', { name: '¿Quiénes Somos?' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Servicios' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Blog' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Aula Virtual' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Recursos para Descargar' }).length).toBeGreaterThan(0)
+
+    const contactSection = document.querySelector('#contacto')
+    expect(contactSection).not.toBeNull()
+    expect(within(contactSection as HTMLElement).getAllByText('Contáctanos').length).toBeGreaterThan(0)
+
+    expect(screen.queryByText('Clientes y sectores')).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', {
+        name: 'Recursos de apoyo para activar conversaciones comerciales y documentales',
+      }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('keeps the four service catalogs image-led under servicios', () => {
     render(<App />)
 
     certificationTitles.forEach((title) => {
@@ -107,15 +96,40 @@ describe('Educa 24/7 landing page', () => {
     })
   })
 
-  it('renders resources, clients and certificate verification blocks', () => {
+  it('renders one image per catalog course and removes visible catalog body copy', () => {
+    const { container, getAllByText, getAllByAltText, queryByText } = render(<App />)
+
+    const totalItems = catalogSections.reduce((count, section) => count + section.items.length, 0)
+    const uniqueCatalogAlts = new Set(
+      Array.from(container.querySelectorAll('[data-testid="catalog-image"]')).map((image) =>
+        image.getAttribute('alt'),
+      ),
+    )
+
+    expect(uniqueCatalogAlts.size).toBe(totalItems)
+
+    catalogSections.forEach((section) => {
+      section.items.forEach((item) => {
+        expect(getAllByText(item.title).length).toBeGreaterThan(0)
+        expect(getAllByAltText(item.imageAlt).length).toBeGreaterThan(0)
+      })
+    })
+
+    hiddenCatalogDescriptions.forEach((description) => {
+      expect(queryByText(description)).not.toBeInTheDocument()
+    })
+  })
+
+  it('renders blog, aula virtual, downloads and certificate verification blocks', () => {
     render(<App />)
 
-    expect(screen.getAllByRole('heading', { name: 'Catálogo de servicios' }).length).toBeGreaterThan(0)
-    expect(screen.getAllByRole('heading', { name: 'Clientes y sectores' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Blog' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Aula Virtual' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Recursos para Descargar' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('heading', { name: 'Verificación de certificados' }).length).toBeGreaterThan(0)
   })
 
-  it('opens and closes the mobile menu after selecting a nested service link', async () => {
+  it('opens and closes the flat mobile menu after selecting a top-level link', async () => {
     const user = userEvent.setup()
     render(<App />)
 
@@ -124,8 +138,10 @@ describe('Educa 24/7 landing page', () => {
 
     const mobilePanel = screen.getByTestId('mobile-panel')
     expect(mobilePanel).toBeInTheDocument()
+    expect(within(mobilePanel).getByRole('link', { name: 'Blog' })).toHaveAttribute('href', '#blog')
+    expect(within(mobilePanel).queryByRole('link', { name: 'Capacitaciones' })).not.toBeInTheDocument()
 
-    await user.click(within(mobilePanel).getByRole('link', { name: 'Capacitaciones' }))
+    await user.click(within(mobilePanel).getByRole('link', { name: 'Blog' }))
 
     expect(screen.queryByTestId('mobile-panel')).not.toBeInTheDocument()
   })
