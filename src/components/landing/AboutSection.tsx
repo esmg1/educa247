@@ -7,6 +7,15 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({ section }: AboutSectionProps) {
+  function getInitials(name: string) {
+    return name
+      .split(' ')
+      .map((part) => part[0])
+      .join('')
+      .slice(0, 2)
+      .toUpperCase()
+  }
+
   return (
     <SectionShell id="quienes-somos" surface="white">
       <div className="grid gap-12 xl:grid-cols-[1.02fr_0.98fr] xl:items-center">
@@ -92,30 +101,30 @@ export function AboutSection({ section }: AboutSectionProps) {
           {section.teamMembers.map((member) => (
             <article
               key={member.name}
-              className="overflow-hidden rounded-[32px] border border-educa-mist bg-white shadow-[0_24px_52px_rgba(24,21,18,0.1)]"
+              className="rounded-[32px] border border-educa-mist bg-white p-6 shadow-[0_24px_52px_rgba(24,21,18,0.1)]"
             >
-              <div className="group relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={member.imageSrc}
-                  alt={member.imageAlt}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(17,24,39,0.88)] via-[rgba(17,24,39,0.24)] to-transparent" />
-                <div className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-educa-red">
-                  Equipo
+              <div className="flex items-start gap-4">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl bg-gradient-to-br from-educa-red to-educa-orange text-lg font-extrabold text-white shadow-edge">
+                  {getInitials(member.name)}
                 </div>
-                <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                  <h4 className="text-3xl font-extrabold tracking-tight">{member.name}</h4>
-                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-white/85">
+                <div>
+                  <div className="inline-flex rounded-full bg-[#fff3df] px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-educa-red">
+                    Equipo
+                  </div>
+                  <h4 className="mt-4 text-2xl font-extrabold tracking-tight text-educa-ink">
+                    {member.name}
+                  </h4>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-educa-slate">
                     {member.role}
                   </p>
                 </div>
               </div>
 
-              <div className="border-t border-educa-mist/70 bg-[#fffaf2] px-6 py-5">
-                <p className="text-sm leading-6 text-educa-slate">{member.summary}</p>
+              <div className="mt-6 rounded-[24px] border border-educa-mist/70 bg-[#fffaf2] px-5 py-4">
+                <div className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-educa-red">
+                  Perfil
+                </div>
+                <p className="mt-3 text-sm leading-6 text-educa-slate">{member.summary}</p>
               </div>
             </article>
           ))}

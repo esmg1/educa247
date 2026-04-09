@@ -8,6 +8,10 @@ interface FinalCTASectionProps {
 }
 
 export function FinalCTASection({ contactDetails, panels }: FinalCTASectionProps) {
+  function isExternalLink(href: string) {
+    return href.startsWith('http') || href.startsWith('mailto:')
+  }
+
   return (
     <SectionShell id="contacto" surface="dark" className="section-grid">
       <div className="absolute inset-0 bg-gradient-to-br from-educa-red/24 via-transparent to-educa-green/18" />
@@ -23,12 +27,18 @@ export function FinalCTASection({ contactDetails, panels }: FinalCTASectionProps
 
         <div className="mt-10 flex flex-wrap gap-3">
           {contactDetails.map((item) => (
-            <div
+            <a
               key={item.label}
-              className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm font-semibold text-slate-100 backdrop-blur"
+              href={item.href}
+              target={isExternalLink(item.href) ? '_blank' : undefined}
+              rel={isExternalLink(item.href) ? 'noreferrer' : undefined}
+              className="rounded-[24px] border border-white/10 bg-white/8 px-4 py-3 text-sm text-slate-100 backdrop-blur transition hover:border-orange-300 hover:bg-white/12"
             >
-              {item.value}
-            </div>
+              <span className="block text-[11px] font-extrabold uppercase tracking-[0.18em] text-orange-200">
+                {item.label}
+              </span>
+              <span className="mt-1 block font-semibold">{item.value}</span>
+            </a>
           ))}
         </div>
 
@@ -50,12 +60,18 @@ export function FinalCTASection({ contactDetails, panels }: FinalCTASectionProps
                 {panel.details?.length ? (
                   <div className="mt-5 space-y-3">
                     {panel.details.map((detail) => (
-                      <div
-                        key={detail}
-                        className="rounded-2xl border border-white/10 bg-educa-charcoal/36 px-4 py-3 text-sm text-slate-100"
+                      <a
+                        key={detail.label}
+                        href={detail.href}
+                        target={isExternalLink(detail.href) ? '_blank' : undefined}
+                        rel={isExternalLink(detail.href) ? 'noreferrer' : undefined}
+                        className="block rounded-2xl border border-white/10 bg-educa-charcoal/36 px-4 py-3 text-sm text-slate-100 transition hover:border-orange-300 hover:bg-white/6"
                       >
-                        {detail}
-                      </div>
+                        <span className="block text-[11px] font-extrabold uppercase tracking-[0.16em] text-orange-200">
+                          {detail.label}
+                        </span>
+                        <span className="mt-1 block">{detail.value}</span>
+                      </a>
                     ))}
                   </div>
                 ) : null}

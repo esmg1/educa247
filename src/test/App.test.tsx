@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
 import App from '../App'
-import { aboutSection, catalogSections } from '../data/landingContent'
+import { aboutSection, catalogSections, contactDetails, heroBanner } from '../data/landingContent'
 
 const certificationTitles = [
   'Prevención de Riesgos Laborales: Construcción y Obras Públicas',
@@ -63,9 +63,10 @@ describe('Educa 24/7 landing page', () => {
     expect(within(desktopNav).queryByRole('link', { name: 'Capacitaciones' })).not.toBeInTheDocument()
   })
 
-  it('renders the new homepage sections and removes the old clients/resources structure', () => {
+  it('renders the Igualdad-led homepage sections and removes the old clients/resources structure', () => {
     render(<App />)
 
+    expect(screen.getAllByRole('heading', { name: heroBanner.title, level: 1 }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('heading', { name: '¿Quiénes Somos?' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('heading', { name: 'Servicios' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('heading', { name: 'Blog' }).length).toBeGreaterThan(0)
@@ -84,7 +85,7 @@ describe('Educa 24/7 landing page', () => {
     ).not.toBeInTheDocument()
   })
 
-  it('renders the team profiles inside quienes somos with their titles and placeholder images', () => {
+  it('renders the team profiles inside quienes somos without team photos', () => {
     render(<App />)
 
     const about = document.querySelector('#quienes-somos')
@@ -96,8 +97,9 @@ describe('Educa 24/7 landing page', () => {
       expect(aboutScope.getByRole('heading', { name: member.name })).toBeInTheDocument()
       expect(aboutScope.getByText(member.role)).toBeInTheDocument()
       expect(aboutScope.getByText(member.summary)).toBeInTheDocument()
-      expect(aboutScope.getByAltText(member.imageAlt)).toBeInTheDocument()
     })
+
+    expect(aboutScope.getAllByRole('img')).toHaveLength(2)
   })
 
   it('keeps the four service catalogs image-led under servicios', () => {
@@ -136,13 +138,40 @@ describe('Educa 24/7 landing page', () => {
     })
   })
 
-  it('renders blog, aula virtual, downloads and certificate verification blocks', () => {
-    render(<App />)
+  it('renders the premium Igualdad course, the secondary Evaluación Docente course, and the embedded video', () => {
+    const { container } = render(<App />)
 
     expect(screen.getAllByRole('heading', { name: 'Blog' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('heading', { name: 'Aula Virtual' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Igualdad 2026' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('heading', { name: 'Evaluación Docente 2026' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('heading', { name: 'Recursos para Descargar' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('heading', { name: 'Verificación de certificados' }).length).toBeGreaterThan(0)
+
+    const [iframe] = screen.getAllByTitle('Video Igualdad 2026')
+    expect(iframe).toHaveAttribute('src', 'https://www.youtube.com/embed/v5pNmXDfI8Q')
+    expect(container.querySelector('[data-testid="igualdad-video"] iframe')).not.toBeNull()
+  })
+
+  it('renders the requested social and whatsapp links in contact and footer areas', () => {
+    render(<App />)
+
+    const contactSection = document.querySelector('#contacto')
+    expect(contactSection).not.toBeNull()
+    const footer = document.querySelector('footer')
+    expect(footer).not.toBeNull()
+
+    const contactHrefs = within(contactSection as HTMLElement)
+      .getAllByRole('link')
+      .map((link) => link.getAttribute('href'))
+    const footerHrefs = within(footer as HTMLElement)
+      .getAllByRole('link')
+      .map((link) => link.getAttribute('href'))
+
+    contactDetails.forEach((detail) => {
+      expect(contactHrefs).toContain(detail.href)
+      expect(footerHrefs).toContain(detail.href)
+    })
   })
 
   it('opens and closes the flat mobile menu after selecting a top-level link', async () => {

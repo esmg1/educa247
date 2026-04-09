@@ -8,6 +8,10 @@ interface SiteFooterProps {
 }
 
 export function SiteFooter({ navLinks, contactDetails }: SiteFooterProps) {
+  function isExternalLink(href: string) {
+    return href.startsWith('http') || href.startsWith('mailto:')
+  }
+
   return (
     <footer className="border-t border-white/8 bg-[#101213] text-slate-200">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
@@ -30,9 +34,18 @@ export function SiteFooter({ navLinks, contactDetails }: SiteFooterProps) {
 
           <div className="flex flex-wrap gap-3 text-sm text-slate-300">
             {contactDetails.map((item) => (
-              <span key={item.label} className="rounded-full border border-white/10 px-4 py-2">
-                {item.value}
-              </span>
+              <a
+                key={item.label}
+                href={item.href}
+                target={isExternalLink(item.href) ? '_blank' : undefined}
+                rel={isExternalLink(item.href) ? 'noreferrer' : undefined}
+                className="rounded-[24px] border border-white/10 px-4 py-3 transition hover:border-orange-300 hover:text-white"
+              >
+                <span className="block text-[11px] font-extrabold uppercase tracking-[0.16em] text-slate-500">
+                  {item.label}
+                </span>
+                <span className="mt-1 block font-semibold text-slate-200">{item.value}</span>
+              </a>
             ))}
           </div>
         </div>

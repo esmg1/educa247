@@ -45,13 +45,10 @@ import investigacionAccidentesImage from '../assets/catalog/asesorias/investigac
 import planAnualCapacitacionImage from '../assets/catalog/asesorias/plan-anual-capacitacion.webp'
 import planesEmergenciaImage from '../assets/catalog/asesorias/planes-emergencia.webp'
 import reglamentoHigieneSeguridadImage from '../assets/catalog/asesorias/reglamento-higiene-seguridad.webp'
-import danielEspinozaPlaceholder from '../assets/team/daniel-espinoza-placeholder.svg'
+import evaluacionDocenteCourseImage from '../assets/courses/evaluacion-docente-2026.jpg'
+import igualdadLockoutImage from '../assets/courses/igualdad-lockout.jpg'
 import heroWorker from '../assets/industrial/hero-worker.jpg'
 import machineryFloor from '../assets/industrial/machinery-floor.jpg'
-import plantFoundry from '../assets/industrial/plant-foundry.jpg'
-import kevinFajardoPlaceholder from '../assets/team/kevin-fajardo-placeholder.svg'
-import mariaOrtegaPlaceholder from '../assets/team/maria-ortega-placeholder.svg'
-import simonMaciasPlaceholder from '../assets/team/simon-macias-placeholder.svg'
 
 export type SectionId =
   | 'inicio'
@@ -95,6 +92,11 @@ export interface HeroBanner {
   primaryImageAlt: string
   secondaryImageSrc: string
   secondaryImageAlt: string
+  supportCard: {
+    eyebrow: string
+    title: string
+    description: string
+  }
 }
 
 export interface AboutHighlight {
@@ -107,8 +109,6 @@ export interface TeamMember {
   name: string
   role: string
   summary: string
-  imageSrc: string
-  imageAlt: string
 }
 
 export interface AboutSectionData {
@@ -133,7 +133,7 @@ export interface VisualCard {
 }
 
 export interface VisualShowcaseSectionData {
-  id: Extract<SectionId, 'blog' | 'aula-virtual' | 'descargas'>
+  id: Extract<SectionId, 'blog' | 'descargas'>
   eyebrow: string
   title: string
   description: string
@@ -141,6 +141,43 @@ export interface VisualShowcaseSectionData {
   ctaHref: `#${SectionId}`
   surface: 'white' | 'sand'
   cards: VisualCard[]
+}
+
+export interface FeaturedVirtualCourse {
+  badge: string
+  title: string
+  subtitle: string
+  description: string
+  bullets: string[]
+  primaryCtaLabel: string
+  primaryCtaHref: `#${SectionId}`
+  imageSrc: string
+  imageAlt: string
+  videoEmbedUrl: string
+}
+
+export interface SupportingVirtualCourse {
+  badge: string
+  title: string
+  subtitle: string
+  description: string
+  supportLine: string
+  ctaLabel: string
+  ctaHref: `#${SectionId}`
+  imageSrc: string
+  imageAlt: string
+}
+
+export interface VirtualCoursesSectionData {
+  id: Extract<SectionId, 'aula-virtual'>
+  eyebrow: string
+  title: string
+  description: string
+  ctaLabel: string
+  ctaHref: `#${SectionId}`
+  surface: 'sand' | 'white'
+  featuredCourse: FeaturedVirtualCourse
+  supportingCourse: SupportingVirtualCourse
 }
 
 export interface ServicePillar {
@@ -214,7 +251,7 @@ export interface FooterPanel {
   title: string
   description: string
   icon: LucideIcon
-  details?: string[]
+  details?: ContactDetail[]
   links: Array<{
     label: string
     href: `#${SectionId}`
@@ -232,24 +269,30 @@ export const navLinks: NavLink[] = [
 ]
 
 export const heroBanner: HeroBanner = {
-  eyebrow: 'Educa 24/7',
-  title: 'Certificaciones, capacitaciones y control ocupacional para operaciones exigentes.',
+  eyebrow: 'Programa premium Educa 24/7',
+  title: 'Programa Igualdad 2026: de la Ley a la Práctica Empresarial.',
   description:
-    'Acompañamos a personas y empresas con servicios de seguridad industrial y salud ocupacional: certificaciones, capacitaciones HSE, mediciones laborales y asesorías técnicas.',
-  primaryCtaLabel: 'Explorar servicios',
-  primaryCtaHref: '#servicios',
+    'Formación asincrónica alineada al Acuerdo Ministerial MDT-2025-006, diseñada bajo la Metodología PACIE para evidenciar cumplimiento, prevenir discriminación y fortalecer una cultura laboral verificable.',
+  primaryCtaLabel: 'Ver Aula Virtual',
+  primaryCtaHref: '#aula-virtual',
   secondaryCtaLabel: 'Contáctanos',
   secondaryCtaHref: '#contacto',
   quickLinks: [
-    { label: 'Certificaciones', href: '#certificaciones' },
-    { label: 'Capacitaciones', href: '#capacitaciones' },
-    { label: 'Mediciones', href: '#mediciones' },
-    { label: 'Asesorías', href: '#asesorias' },
+    { label: 'Igualdad 2026', href: '#aula-virtual' },
+    { label: 'Acuerdo MDT-2025-006', href: '#aula-virtual' },
+    { label: 'Metodología PACIE', href: '#aula-virtual' },
+    { label: 'Modalidad asincrónica', href: '#aula-virtual' },
   ],
-  primaryImageSrc: plantFoundry,
-  primaryImageAlt: 'Interior de planta industrial con estructuras metálicas y ambiente de producción.',
-  secondaryImageSrc: heroWorker,
-  secondaryImageAlt: 'Operario con casco inspeccionando una máquina industrial.',
+  primaryImageSrc: igualdadLockoutImage,
+  primaryImageAlt: 'Bloqueo y etiquetado industrial con candados rojos sobre equipo eléctrico.',
+  secondaryImageSrc: evaluacionDocenteCourseImage,
+  secondaryImageAlt: 'Afiche del curso Evaluación Docente 2026 de Educa 24/7.',
+  supportCard: {
+    eyebrow: 'Cumplimiento verificable',
+    title: '4 módulos de 10 horas para convertir la norma en práctica institucional.',
+    description:
+      'Un recorrido progresivo para fortalecer igualdad laboral, prevenir discriminación y documentar avances con una metodología medible y aplicable.',
+  },
 }
 
 export const aboutSection: AboutSectionData = {
@@ -272,33 +315,24 @@ export const aboutSection: AboutSectionData = {
       role: 'Director de Operaciones',
       summary:
         'Coordina la operación técnica y la ejecución de los servicios para convertir la planificación en resultados consistentes en campo.',
-      imageSrc: simonMaciasPlaceholder,
-      imageAlt: 'Retrato profesional ilustrado de Simon Macias, Director de Operaciones.',
     },
     {
       name: 'María Ortega',
       role: 'Líder General del Proyecto y Directora Académica',
       summary:
         'Conduce la visión general del proyecto y la dirección académica para mantener una oferta formativa clara, vigente y aplicable.',
-      imageSrc: mariaOrtegaPlaceholder,
-      imageAlt:
-        'Retrato profesional ilustrado de María Ortega, Líder General del Proyecto y Directora Académica.',
     },
     {
       name: 'Kevin Fajardo',
       role: 'Director de Desarrollo Profesional',
       summary:
         'Impulsa rutas de crecimiento y desarrollo profesional alineadas con certificación, empleabilidad y desempeño operativo.',
-      imageSrc: kevinFajardoPlaceholder,
-      imageAlt: 'Retrato profesional ilustrado de Kevin Fajardo, Director de Desarrollo Profesional.',
     },
     {
       name: 'Daniel Espinoza',
       role: 'Analista en Soporte Técnico',
       summary:
         'Aporta soporte técnico y coordinación documental con perfil analítico, experiencia administrativa y disposición constante para el trabajo colaborativo.',
-      imageSrc: danielEspinozaPlaceholder,
-      imageAlt: 'Retrato profesional ilustrado de Daniel Espinoza, Analista en Soporte Técnico.',
     },
   ],
   sectors: ['Construcción', 'Energía', 'Manufactura', 'Hidrocarburos', 'Logística', 'Mantenimiento'],
@@ -473,37 +507,46 @@ export const blogSection: VisualShowcaseSectionData = {
   ],
 }
 
-export const virtualClassSection: VisualShowcaseSectionData = {
+export const virtualCoursesSection: VirtualCoursesSectionData = {
   id: 'aula-virtual',
-  eyebrow: 'Entrenamiento digital',
+  eyebrow: 'Aula Virtual',
   title: 'Aula Virtual',
-  description: 'Accesos guiados a contenidos virtuales para reforzar capacitación, seguimiento y actualización del personal.',
+  description:
+    'Dos rutas activas con Igualdad 2026 como oferta principal y una experiencia complementaria para preparación docente, dentro de una marca que sigue anclada en seguridad industrial y formación aplicada.',
   ctaLabel: 'Solicitar acceso',
   ctaHref: '#contacto',
   surface: 'sand',
-  cards: [
-    {
-      badge: 'Rutas activas',
-      title: 'Programas organizados por línea de servicio',
-      href: '#contacto',
-      imageSrc: formacionFormadoresImage,
-      imageAlt: 'Grupo de trabajadores con casco durante una sesión de formación.',
-    },
-    {
-      badge: 'Seguimiento',
-      title: 'Seguimiento de avance para equipos y responsables',
-      href: '#contacto',
-      imageSrc: psicosocialesImage,
-      imageAlt: 'Equipo reunido alrededor de una mesa de trabajo.',
-    },
-    {
-      badge: 'Refuerzo',
-      title: 'Material listo para continuidad y repaso',
-      href: '#contacto',
-      imageSrc: planAnualCapacitacionImage,
-      imageAlt: 'Reunión de planificación con documentos sobre la mesa.',
-    },
-  ],
+  featuredCourse: {
+    badge: 'Programa premium',
+    title: 'Igualdad 2026',
+    subtitle: 'De la Ley a la Práctica Empresarial',
+    description:
+      'Programa anual en igualdad laboral estructurado para evidenciar cumplimiento normativo, fortalecer competencias institucionales y sostener una cultura organizacional alineada con estándares actuales de equidad.',
+    bullets: [
+      'Alineado al Acuerdo Ministerial MDT-2025-006.',
+      'Diseñado bajo la Metodología PACIE para un aprendizaje óptimo, práctico y medible.',
+      '4 módulos formativos con 10 horas académicas por módulo.',
+      'Modalidad asincrónica con seguimiento progresivo y cumplimiento verificable.',
+    ],
+    primaryCtaLabel: 'Solicitar información',
+    primaryCtaHref: '#contacto',
+    imageSrc: igualdadLockoutImage,
+    imageAlt: 'Bloqueo y etiquetado industrial con candados rojos como apoyo visual de la marca Educa 24/7.',
+    videoEmbedUrl: 'https://www.youtube.com/embed/v5pNmXDfI8Q',
+  },
+  supportingCourse: {
+    badge: 'Curso complementario',
+    title: 'Evaluación Docente 2026',
+    subtitle: 'De la información a la preparación',
+    description:
+      'Ruta complementaria para quienes necesitan concentrar información oficial actualizada y reforzar su preparación con una experiencia digital clara y directa.',
+    supportLine:
+      'Todo en un solo lugar, con información oficial actualizada y herramientas de autoevaluación.',
+    ctaLabel: 'Solicitar acceso',
+    ctaHref: '#contacto',
+    imageSrc: evaluacionDocenteCourseImage,
+    imageAlt: 'Afiche promocional del curso Evaluación Docente 2026 de Educa 24/7.',
+  },
 }
 
 export const downloadSection: VisualShowcaseSectionData = {
@@ -796,19 +839,24 @@ export const trustTiles: TrustTile[] = [
 
 export const contactDetails: ContactDetail[] = [
   {
-    label: 'Correo de atención',
-    value: 'hola@educa247.ec',
-    href: 'mailto:hola@educa247.ec',
+    label: 'Instagram',
+    value: '@educa_247',
+    href: 'https://www.instagram.com/educa_247/',
+  },
+  {
+    label: 'Facebook',
+    value: 'facebook.com/educa247',
+    href: 'https://www.facebook.com/educa247/',
+  },
+  {
+    label: 'YouTube',
+    value: '@educa247',
+    href: 'https://www.youtube.com/@educa247',
   },
   {
     label: 'WhatsApp',
-    value: '+593 99 000 0000',
-    href: 'https://wa.me/593990000000',
-  },
-  {
-    label: 'Cobertura',
-    value: 'Guayaquil, Ecuador',
-    href: '#contacto',
+    value: '+593 99 343 2822',
+    href: 'https://wa.me/593993432822',
   },
 ]
 
@@ -835,7 +883,7 @@ export const footerPanels: FooterPanel[] = [
     title: 'Contáctanos',
     description: 'Canales de atención para solicitudes, cotizaciones y coordinación inicial.',
     icon: UsersRound,
-    details: contactDetails.map((item) => `${item.label}: ${item.value}`),
+    details: contactDetails,
     links: [{ label: 'Ir al inicio', href: '#inicio' }],
   },
   {

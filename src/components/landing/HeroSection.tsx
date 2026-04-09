@@ -35,7 +35,7 @@ export function HeroSection({ banner }: HeroSectionProps) {
           <div className="mt-7 flex flex-wrap gap-3">
             {banner.quickLinks.map((link) => (
               <a
-                key={link.href}
+                key={`${link.href}-${link.label}`}
                 href={link.href}
                 className="rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-semibold text-slate-100 backdrop-blur transition hover:border-orange-300 hover:bg-white/12 hover:text-white"
               >
@@ -74,19 +74,19 @@ export function HeroSection({ banner }: HeroSectionProps) {
               <img
                 src={banner.secondaryImageSrc}
                 alt={banner.secondaryImageAlt}
-                className="h-[250px] w-full rounded-[24px] object-cover sm:h-[320px]"
+                className="h-[250px] w-full rounded-[24px] bg-white object-contain p-3 sm:h-[320px]"
               />
             </div>
 
             <div className="rounded-[32px] border border-white/10 bg-white/10 p-6 backdrop-blur">
               <div className="text-xs font-extrabold uppercase tracking-[0.22em] text-orange-200">
-                Cobertura integral
+                {banner.supportCard.eyebrow}
               </div>
               <div className="mt-3 text-2xl font-extrabold tracking-tight text-white">
-                Soluciones claras para personas y empresas.
+                {banner.supportCard.title}
               </div>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                Certificaciones, capacitaciones, mediciones y asesorías con rutas directas para consultar, cotizar y avanzar.
+                {banner.supportCard.description}
               </p>
             </div>
           </div>
