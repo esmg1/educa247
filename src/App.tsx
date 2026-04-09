@@ -26,13 +26,13 @@ function App() {
       <SiteHeader navLinks={navLinks} />
       <main>
         <HeroSection banner={heroBanner} />
+        <VirtualCoursesSection section={virtualCoursesSection} />
         <AboutSection section={aboutSection} />
         <ServicesSection services={serviceOverviewCards} />
         {catalogSections.map((section) => (
           <CatalogSection key={section.id} section={section} />
         ))}
         <VisualShowcaseSection section={blogSection} />
-        <VirtualCoursesSection section={virtualCoursesSection} />
         <VisualShowcaseSection section={downloadSection} />
         <FinalCTASection contactDetails={contactDetails} panels={footerPanels} />
       </main>

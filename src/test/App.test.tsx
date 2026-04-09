@@ -85,6 +85,20 @@ describe('Educa 24/7 landing page', () => {
     ).not.toBeInTheDocument()
   })
 
+  it('places Aula Virtual above quienes somos to give the courses more prominence', () => {
+    render(<App />)
+
+    const virtualCourses = document.querySelector('#aula-virtual')
+    const about = document.querySelector('#quienes-somos')
+
+    expect(virtualCourses).not.toBeNull()
+    expect(about).not.toBeNull()
+    expect(
+      (virtualCourses as HTMLElement).compareDocumentPosition(about as HTMLElement) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy()
+  })
+
   it('renders the team profiles inside quienes somos without team photos', () => {
     render(<App />)
 
@@ -151,6 +165,7 @@ describe('Educa 24/7 landing page', () => {
     const [iframe] = screen.getAllByTitle('Video Igualdad 2026')
     expect(iframe).toHaveAttribute('src', 'https://www.youtube.com/embed/v5pNmXDfI8Q')
     expect(container.querySelector('[data-testid="igualdad-video"] iframe')).not.toBeNull()
+    expect(container.querySelector('[data-testid="igualdad-video"]')).toHaveClass('aspect-[9/16]')
   })
 
   it('renders the requested social and whatsapp links in contact and footer areas', () => {

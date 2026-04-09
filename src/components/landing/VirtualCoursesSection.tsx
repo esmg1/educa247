@@ -27,7 +27,7 @@ export function VirtualCoursesSection({ section }: VirtualCoursesSectionProps) {
         </Button>
       </div>
 
-      <div className="mt-12 grid gap-6 xl:grid-cols-[1.12fr_0.88fr]">
+      <div className="mt-12 grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
         <article className="relative isolate overflow-hidden rounded-[36px] border border-white/40 bg-[#131110] p-8 shadow-[0_32px_74px_rgba(24,21,18,0.24)] sm:p-10">
           <img
             src={section.featuredCourse.imageSrc}
@@ -79,7 +79,7 @@ export function VirtualCoursesSection({ section }: VirtualCoursesSectionProps) {
             <div className="flex items-center justify-between gap-4 border-b border-stone-200 px-6 py-5">
               <div>
                 <div className="text-xs font-extrabold uppercase tracking-[0.22em] text-educa-red">
-                  Video del programa
+                  Video Shorts
                 </div>
                 <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-educa-ink">
                   {section.featuredCourse.title}
@@ -90,14 +90,19 @@ export function VirtualCoursesSection({ section }: VirtualCoursesSectionProps) {
               </div>
             </div>
 
-            <div className="aspect-video bg-educa-charcoal" data-testid="igualdad-video">
-              <iframe
-                src={section.featuredCourse.videoEmbedUrl}
-                title={`Video ${section.featuredCourse.title}`}
-                className="h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="bg-[#f7efe1] px-5 py-6 sm:px-6">
+              <div
+                className="mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[28px] border border-stone-300 bg-educa-charcoal shadow-[0_24px_60px_rgba(24,21,18,0.18)] sm:max-w-[360px]"
+                data-testid="igualdad-video"
+              >
+                <iframe
+                  src={section.featuredCourse.videoEmbedUrl}
+                  title={`Video ${section.featuredCourse.title}`}
+                  className="h-full w-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </article>
 
