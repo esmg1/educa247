@@ -29,7 +29,7 @@ import instalacionEquiposMaquinasElectricasImage from '../assets/catalog/certifi
 import instalacionesElectricasImage from '../assets/catalog/certificaciones/instalaciones-electricas.webp'
 import prevencionRiesgosConstruccionImage from '../assets/catalog/certificaciones/prevencion-riesgos-construccion.webp'
 import prevencionRiesgosEnergiaElectricaImage from '../assets/catalog/certificaciones/prevencion-riesgos-energia-electrica.webp'
-import bloqueoEtiquetadoImage from '../assets/catalog/capacitaciones/bloqueo-etiquetado.webp'
+import bloqueoEtiquetadoImage from '../assets/industrial/loto.png'
 import espaciosConfinadosImage from '../assets/catalog/capacitaciones/espacios-confinados.webp'
 import manejoH2SImage from '../assets/catalog/capacitaciones/manejo-h2s.webp'
 import riesgosElectricosImage from '../assets/catalog/capacitaciones/riesgos-electricos.webp'
@@ -46,7 +46,7 @@ import planAnualCapacitacionImage from '../assets/catalog/asesorias/plan-anual-c
 import planesEmergenciaImage from '../assets/catalog/asesorias/planes-emergencia.webp'
 import reglamentoHigieneSeguridadImage from '../assets/catalog/asesorias/reglamento-higiene-seguridad.webp'
 import evaluacionDocenteCourseImage from '../assets/courses/evaluacion-docente-2026.jpg'
-import igualdadLockoutImage from '../assets/courses/igualdad-lockout.jpg'
+import igualdadLockoutImage from '../assets/industrial/loto.png'
 import heroWorker from '../assets/industrial/hero-worker.jpg'
 import machineryFloor from '../assets/industrial/machinery-floor.jpg'
 
@@ -264,34 +264,31 @@ export const navLinks: NavLink[] = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Blog', href: '#blog' },
   { label: 'Aula Virtual', href: '#aula-virtual' },
-  { label: 'Recursos para Descargar', href: '#descargas' },
+  { label: 'Recursos', href: '#descargas' },
   { label: 'Contáctanos', href: '#contacto' },
 ]
 
 export const heroBanner: HeroBanner = {
-  eyebrow: 'Programa premium Educa 24/7',
-  title: 'Programa Igualdad 2026: de la Ley a la Práctica Empresarial.',
-  description:
-    'Formación asincrónica alineada al Acuerdo Ministerial MDT-2025-006, diseñada bajo la Metodología PACIE para evidenciar cumplimiento, prevenir discriminación y fortalecer una cultura laboral verificable.',
-  primaryCtaLabel: 'Ver Aula Virtual',
-  primaryCtaHref: '#aula-virtual',
-  secondaryCtaLabel: 'Contáctanos',
-  secondaryCtaHref: '#contacto',
+  eyebrow: 'Seguridad · Educación · Sostenibilidad',
+  title: 'Personas preparadas. Empresas más seguras.',
+  description: 'Asesoría en seguridad y salud ocupacional y formación para llevar la prevención, la igualdad laboral y el aprendizaje a la práctica diaria de tu organización.',
+  primaryCtaLabel: 'Conversemos sobre tu empresa',
+  primaryCtaHref: '#contacto',
+  secondaryCtaLabel: 'Explorar programas',
+  secondaryCtaHref: '#aula-virtual',
   quickLinks: [
+    { label: 'Asesoría SST', href: '#asesorias' },
     { label: 'Igualdad 2026', href: '#aula-virtual' },
-    { label: 'Acuerdo MDT-2025-006', href: '#aula-virtual' },
-    { label: 'Metodología PACIE', href: '#aula-virtual' },
-    { label: 'Modalidad asincrónica', href: '#aula-virtual' },
+    { label: 'Capacitación HSE', href: '#capacitaciones' },
   ],
   primaryImageSrc: igualdadLockoutImage,
-  primaryImageAlt: 'Bloqueo y etiquetado industrial con candados rojos sobre equipo eléctrico.',
+  primaryImageAlt: 'Profesional aplicando bloqueo y etiquetado LOTO en un tablero eléctrico industrial.',
   secondaryImageSrc: evaluacionDocenteCourseImage,
   secondaryImageAlt: 'Afiche del curso Evaluación Docente 2026 de Educa 24/7.',
   supportCard: {
-    eyebrow: 'Cumplimiento verificable',
-    title: '4 módulos de 10 horas para convertir la norma en práctica institucional.',
-    description:
-      'Un recorrido progresivo para fortalecer igualdad laboral, prevenir discriminación y documentar avances con una metodología medible y aplicable.',
+    eyebrow: 'Prevención en acción',
+    title: 'El conocimiento se convierte en trabajo seguro.',
+    description: 'Formación y acompañamiento técnico para cada etapa de tu gestión.',
   },
 }
 
@@ -495,7 +492,7 @@ export const blogSection: VisualShowcaseSectionData = {
       title: 'LOTO: aislar, bloquear y verificar antes de intervenir',
       href: '#capacitaciones',
       imageSrc: bloqueoEtiquetadoImage,
-      imageAlt: 'Candado industrial colocado sobre un punto de bloqueo.',
+      imageAlt: 'Procedimiento LOTO con candado y tarjeta de advertencia en un tablero eléctrico.',
     },
     {
       badge: 'Monitoreo',
@@ -512,26 +509,26 @@ export const virtualCoursesSection: VirtualCoursesSectionData = {
   eyebrow: 'Aula Virtual',
   title: 'Aula Virtual',
   description:
-    'Dos rutas activas con Igualdad 2026 como oferta principal y una experiencia complementaria para preparación docente, dentro de una marca que sigue anclada en seguridad industrial y formación aplicada.',
+    'Aprende a tu ritmo con programas que conectan el conocimiento con los retos del trabajo. Formación en igualdad laboral y preparación docente en un entorno digital accesible.',
   ctaLabel: 'Solicitar acceso',
   ctaHref: '#contacto',
   surface: 'sand',
   featuredCourse: {
-    badge: 'Programa premium',
+    badge: 'Formación para organizaciones',
     title: 'Igualdad 2026',
-    subtitle: 'De la Ley a la Práctica Empresarial',
+    subtitle: 'Una cultura de respeto empieza con el aprendizaje',
     description:
-      'Programa anual en igualdad laboral estructurado para evidenciar cumplimiento normativo, fortalecer competencias institucionales y sostener una cultura organizacional alineada con estándares actuales de equidad.',
+      'Una ruta de 40 horas para comprender la igualdad salarial, reconocer prácticas discriminatorias y promover decisiones más justas en el trabajo. Pensada para colaboradores, líderes y responsables de talento humano.',
     bullets: [
-      'Alineado al Acuerdo Ministerial MDT-2025-006.',
-      'Diseñado bajo la Metodología PACIE para un aprendizaje óptimo, práctico y medible.',
+      'Contenidos alineados al Acuerdo Ministerial MDT-2025-006.',
+      'Metodología PACIE: aprendizaje progresivo con aplicación práctica.',
       '4 módulos formativos con 10 horas académicas por módulo.',
-      'Modalidad asincrónica con seguimiento progresivo y cumplimiento verificable.',
+      'Modalidad asincrónica para organizar el aprendizaje junto a la jornada laboral.',
     ],
     primaryCtaLabel: 'Solicitar información',
     primaryCtaHref: '#contacto',
     imageSrc: igualdadLockoutImage,
-    imageAlt: 'Bloqueo y etiquetado industrial con candados rojos como apoyo visual de la marca Educa 24/7.',
+    imageAlt: 'Profesional realizando un procedimiento de bloqueo y etiquetado en una instalación industrial.',
     videoEmbedUrl: 'https://www.youtube.com/embed/v5pNmXDfI8Q',
   },
   supportingCourse: {
@@ -613,7 +610,7 @@ export const catalogSections: CatalogSectionData[] = [
   {
     id: 'certificaciones',
     eyebrow: 'Nuestras Certificaciones',
-    title: 'Certificaciones por competencias laborales para frentes operativos exigentes',
+    title: 'Competencias que respaldan tu trabajo',
     description:
       'Programas orientados a construcción, energía, seguridad industrial y operación eléctrica.',
     accent: 'red',
@@ -666,7 +663,7 @@ export const catalogSections: CatalogSectionData[] = [
   {
     id: 'capacitaciones',
     eyebrow: 'Nuestras Capacitaciones',
-    title: 'Capacitaciones HSE pensadas para práctica, respuesta y prevención',
+    title: 'Preparación para tareas de alto riesgo',
     description:
       'Entrenamientos prácticos para tareas críticas, control preventivo y respuesta operativa en campo.',
     accent: 'orange',
@@ -712,14 +709,14 @@ export const catalogSections: CatalogSectionData[] = [
         description: 'Entrenamiento orientado a LOTO, aislamiento y verificación de energías peligrosas.',
         icon: Cog,
         imageSrc: bloqueoEtiquetadoImage,
-        imageAlt: 'Candado industrial colocado sobre un punto de bloqueo para control de energías.',
+        imageAlt: 'Trabajadora aplicando bloqueo y etiquetado LOTO a un tablero eléctrico.',
       },
     ],
   },
   {
     id: 'mediciones',
     eyebrow: 'Nuestras Mediciones',
-    title: 'Mediciones laborales para evaluar exposición y priorizar acciones correctivas',
+    title: 'Datos para cuidar el entorno laboral',
     description:
       'Evaluaciones ocupacionales para medir exposición, priorizar controles y sustentar decisiones técnicas.',
     accent: 'green',
@@ -772,7 +769,7 @@ export const catalogSections: CatalogSectionData[] = [
   {
     id: 'asesorias',
     eyebrow: 'Nuestras Asesorías',
-    title: 'Asesorías para sostener sistemas, investigación y soporte documental',
+    title: 'Soporte técnico para tu gestión SST',
     description:
       'Acompañamiento técnico y documental para investigación, planes, reglamentos y gestión preventiva.',
     accent: 'charcoal',

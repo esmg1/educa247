@@ -1,3 +1,5 @@
+import { FAQSection } from './components/landing/FAQSection'
+import { ConsultingSection } from './components/landing/ConsultingSection'
 import { AboutSection } from './components/landing/AboutSection'
 import { CatalogSection } from './components/landing/CatalogSection'
 import { FinalCTASection } from './components/landing/FinalCTASection'
@@ -13,7 +15,6 @@ import {
   catalogSections,
   contactDetails,
   downloadSection,
-  footerPanels,
   heroBanner,
   navLinks,
   serviceOverviewCards,
@@ -24,17 +25,22 @@ function App() {
   return (
     <div className="min-h-screen bg-educa-cloud text-educa-ink">
       <SiteHeader navLinks={navLinks} />
-      <main>
+      <a href="#contenido" className="skip-link">
+        Saltar al contenido
+      </a>
+      <main id="contenido">
         <HeroSection banner={heroBanner} />
-        <VirtualCoursesSection section={virtualCoursesSection} />
-        <AboutSection section={aboutSection} />
         <ServicesSection services={serviceOverviewCards} />
+        <ConsultingSection />
+        <VirtualCoursesSection section={virtualCoursesSection} />
         {catalogSections.map((section) => (
           <CatalogSection key={section.id} section={section} />
         ))}
+        <AboutSection section={aboutSection} />
         <VisualShowcaseSection section={blogSection} />
         <VisualShowcaseSection section={downloadSection} />
-        <FinalCTASection contactDetails={contactDetails} panels={footerPanels} />
+        <FAQSection />
+        <FinalCTASection contactDetails={contactDetails} />
       </main>
       <SiteFooter contactDetails={contactDetails} navLinks={navLinks} />
     </div>

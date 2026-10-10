@@ -1,45 +1,19 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
-
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from 'react'
 import { cn } from '../../lib/cn'
-
-type ButtonVariant = 'primary' | 'secondary' | 'outline-light'
-type ButtonSize = 'sm' | 'md'
-
-interface SharedProps {
+type Shared = {
   children: ReactNode
   className?: string
-  variant?: ButtonVariant
-  size?: ButtonSize
+  variant?: 'primary' | 'secondary' | 'outline-light'
+  size?: 'sm' | 'md'
 }
-
-type AnchorProps = SharedProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
-    href: string
-  }
-
-type NativeButtonProps = SharedProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
-    href?: undefined
-  }
-
-const baseClasses =
-  'inline-flex items-center gap-2 rounded-2xl font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-educa-orange'
-
-const variants: Record<ButtonVariant, string> = {
-  primary:
-    'bg-gradient-to-r from-educa-red to-educa-orange px-5 text-white shadow-edge hover:-translate-y-0.5 hover:brightness-105',
-  secondary:
-    'border border-educa-mist bg-educa-cream px-5 text-educa-ink hover:-translate-y-0.5 hover:border-educa-orange hover:text-educa-red',
-  'outline-light':
-    'border border-white/30 bg-white/5 px-5 text-white hover:-translate-y-0.5 hover:border-white hover:bg-white/12',
-}
-
-const sizes: Record<ButtonSize, string> = {
-  sm: 'h-11 text-sm',
-  md: 'h-12 text-sm sm:text-base',
-}
-
-export function Button(props: AnchorProps | NativeButtonProps) {
+type Props =
+  | (Shared & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string })
+  | (Shared & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined })
+export function Button(props: Props) {
   const {
     children,
     className,
@@ -47,30 +21,27 @@ export function Button(props: AnchorProps | NativeButtonProps) {
     size = 'md',
     ...rest
   } = props
-  const classes = cn(baseClasses, variants[variant], sizes[size], className)
-
-  if ('href' in rest && rest.href) {
-    const { href, ...anchorProps } = rest
-
+  const classes = cn(
+    'button',
+    `button--${variant}`,
+    size === 'sm' && 'button--small',
+    className,
+  )
+  if ('href' in rest && rest.href)
     return (
       <a
+        {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
         className={classes}
-        href={href}
-        {...(anchorProps as Omit<AnchorProps, keyof SharedProps | 'href'>)}
       >
         {children}
       </a>
     )
-  }
-
-  const { type, ...buttonProps } = rest
-  const buttonType = (type ?? 'button') as 'button' | 'submit' | 'reset'
-
+  const nativeProps = rest as ButtonHTMLAttributes<HTMLButtonElement>
   return (
     <button
+      {...nativeProps}
+      type={nativeProps.type ?? 'button'}
       className={classes}
-      type={buttonType}
-      {...(buttonProps as Omit<NativeButtonProps, keyof SharedProps>)}
     >
       {children}
     </button>

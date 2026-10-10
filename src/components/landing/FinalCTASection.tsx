@@ -1,95 +1,77 @@
-import type { ContactDetail, FooterPanel } from '../../data/landingContent'
+import { ArrowUpRight, MessageCircle } from 'lucide-react'
+import type { ContactDetail } from '../../data/landingContent'
 import { SectionShell } from '../layout/SectionShell'
-import { SectionHeading } from '../ui/SectionHeading'
-
-interface FinalCTASectionProps {
+import { Button } from '../ui/Button'
+export function FinalCTASection({
+  contactDetails,
+}: {
   contactDetails: ContactDetail[]
-  panels: FooterPanel[]
-}
-
-export function FinalCTASection({ contactDetails, panels }: FinalCTASectionProps) {
-  function isExternalLink(href: string) {
-    return href.startsWith('http') || href.startsWith('mailto:')
-  }
-
+}) {
   return (
-    <SectionShell id="contacto" surface="dark" className="section-grid">
-      <div className="absolute inset-0 bg-gradient-to-br from-educa-red/24 via-transparent to-educa-green/18" />
-      <div className="hazard-stripes absolute inset-y-0 right-0 hidden w-1/3 opacity-30 lg:block" />
-
-      <div className="relative">
-        <SectionHeading
-          eyebrow="Contáctanos"
-          title="Conversemos sobre la necesidad de tu equipo o proyecto."
-          description="Aquí encuentras canales de contacto, acceso al catálogo y rutas para continuar con certificaciones, capacitaciones, mediciones o asesorías."
-          theme="dark"
-        />
-
-        <div className="mt-10 flex flex-wrap gap-3">
-          {contactDetails.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              target={isExternalLink(item.href) ? '_blank' : undefined}
-              rel={isExternalLink(item.href) ? 'noreferrer' : undefined}
-              className="rounded-[24px] border border-white/10 bg-white/8 px-4 py-3 text-sm text-slate-100 backdrop-blur transition hover:border-orange-300 hover:bg-white/12"
-            >
-              <span className="block text-[11px] font-extrabold uppercase tracking-[0.18em] text-orange-200">
-                {item.label}
-              </span>
-              <span className="mt-1 block font-semibold">{item.value}</span>
-            </a>
-          ))}
+    <SectionShell id="contacto" surface="dark">
+      <div className="contact-grid">
+        <div>
+          <p className="eyebrow">Contáctanos</p>
+          <h2>El siguiente paso empieza con una conversación.</h2>
+          <p>
+            Cuéntanos qué necesita tu organización. Te orientamos sobre
+            formación, certificación, mediciones y asesoría en seguridad y salud
+            ocupacional.
+          </p>
+          <Button
+            href="https://wa.me/593993432822"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle size={20} />
+            Escríbenos por WhatsApp
+          </Button>
+          <span className="contact-number">+593 99 343 2822</span>
         </div>
-
-        <div className="mt-12 grid gap-6 xl:grid-cols-4">
-          {panels.map((panel) => {
-            const Icon = panel.icon
-
-            return (
-              <article
-                key={panel.title}
-                className="rounded-[30px] border border-white/10 bg-white/8 p-6 backdrop-blur"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-orange-300">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h2 className="mt-5 text-xl font-extrabold tracking-tight text-white">{panel.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{panel.description}</p>
-
-                {panel.details?.length ? (
-                  <div className="mt-5 space-y-3">
-                    {panel.details.map((detail) => (
-                      <a
-                        key={detail.label}
-                        href={detail.href}
-                        target={isExternalLink(detail.href) ? '_blank' : undefined}
-                        rel={isExternalLink(detail.href) ? 'noreferrer' : undefined}
-                        className="block rounded-2xl border border-white/10 bg-educa-charcoal/36 px-4 py-3 text-sm text-slate-100 transition hover:border-orange-300 hover:bg-white/6"
-                      >
-                        <span className="block text-[11px] font-extrabold uppercase tracking-[0.16em] text-orange-200">
-                          {detail.label}
-                        </span>
-                        <span className="mt-1 block">{detail.value}</span>
-                      </a>
-                    ))}
-                  </div>
-                ) : null}
-
-                <div className="mt-5 space-y-3">
-                  {panel.links.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="block rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-slate-100 transition hover:border-orange-300 hover:bg-white/6 hover:text-white"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </article>
-            )
-          })}
+        <div className="contact-options">
+          <h3>¿Cómo podemos ayudarte?</h3>
+          <a
+            href="https://wa.me/593993432822?text=Hola%2C%20quisiera%20una%20propuesta%20de%20formaci%C3%B3n%20para%20mi%20equipo."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Formación para mi equipo
+            <ArrowUpRight size={20} />
+          </a>
+          <a
+            href="https://wa.me/593993432822?text=Hola%2C%20necesito%20orientaci%C3%B3n%20en%20gesti%C3%B3n%20SST."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Asesoría para mi empresa
+            <ArrowUpRight size={20} />
+          </a>
+          <a
+            href="https://wa.me/593993432822?text=Hola%2C%20quisiera%20solicitar%20el%20cat%C3%A1logo%20de%20servicios."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Solicitar catálogo
+            <ArrowUpRight size={20} />
+          </a>
+          <a
+            href="https://wa.me/593993432822?text=Hola%2C%20necesito%20soporte%20para%20la%20verificaci%C3%B3n%20de%20un%20certificado."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Verificación de certificados
+            <ArrowUpRight size={20} />
+          </a>
+          <div className="contact-social">
+            {contactDetails
+              .filter((d) => d.label !== 'WhatsApp')
+              .map((d) => (
+                <a key={d.label} href={d.href} target="_blank" rel="noreferrer">
+                  {d.label}
+                  <ArrowUpRight size={13} />
+                </a>
+              ))}
+          </div>
         </div>
       </div>
     </SectionShell>

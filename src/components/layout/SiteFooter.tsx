@@ -1,78 +1,57 @@
-import { Factory } from 'lucide-react'
-
 import type { ContactDetail, NavLink } from '../../data/landingContent'
-
-interface SiteFooterProps {
+import { BrandLogo } from '../ui/BrandLogo'
+export function SiteFooter({
+  navLinks,
+  contactDetails,
+}: {
   navLinks: NavLink[]
   contactDetails: ContactDetail[]
-}
-
-export function SiteFooter({ navLinks, contactDetails }: SiteFooterProps) {
-  function isExternalLink(href: string) {
-    return href.startsWith('http') || href.startsWith('mailto:')
-  }
-
+}) {
   return (
-    <footer className="border-t border-white/8 bg-[#101213] text-slate-200">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
-        <div className="space-y-5">
-          <div className="inline-flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-educa-red to-educa-orange text-white shadow-edge">
-              <Factory className="h-5 w-5" />
-            </div>
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
-                Educa 24/7
-              </div>
-              <div className="text-lg font-extrabold tracking-tight text-white">Plataforma industrial</div>
-            </div>
-          </div>
-
-          <p className="max-w-2xl text-sm leading-7 text-slate-300">
-            Educa 24/7 acompaña procesos de certificación, capacitación, medición y asesoría en seguridad industrial y salud ocupacional.
+    <footer className="site-footer">
+      <div className="site-container footer-grid">
+        <div>
+          <a className="footer-brand" href="#inicio">
+            <BrandLogo variant="full" />
+          </a>
+          <p>
+            Asesoría y formación en seguridad y salud ocupacional, educación y
+            sostenibilidad. Conocimiento que acompaña el desarrollo de personas
+            y organizaciones.
           </p>
-
-          <div className="flex flex-wrap gap-3 text-sm text-slate-300">
-            {contactDetails.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target={isExternalLink(item.href) ? '_blank' : undefined}
-                rel={isExternalLink(item.href) ? 'noreferrer' : undefined}
-                className="rounded-[24px] border border-white/10 px-4 py-3 transition hover:border-orange-300 hover:text-white"
-              >
-                <span className="block text-[11px] font-extrabold uppercase tracking-[0.16em] text-slate-500">
-                  {item.label}
-                </span>
-                <span className="mt-1 block font-semibold text-slate-200">{item.value}</span>
+        </div>
+        <div>
+          <p className="footer-label">Explora</p>
+          <nav aria-label="Pie de página">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
               </a>
             ))}
-          </div>
+          </nav>
         </div>
-
-        <div className="grid gap-3 sm:grid-cols-2">
-          {navLinks.map((link) => (
+        <div>
+          <p className="footer-label">Conecta con nosotros</p>
+          {contactDetails.map((d) => (
             <a
-              key={link.href}
-              href={link.href}
-              className="rounded-[24px] border border-white/10 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-orange-300 hover:text-white"
+              className="footer-contact"
+              href={d.href}
+              key={d.label}
+              target="_blank"
+              rel="noreferrer"
             >
-              {link.label}
+              <span>{d.label}</span>
+              {d.value}
             </a>
           ))}
         </div>
       </div>
-
-      <div className="border-t border-white/8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-5 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <p>(c) 2026 Educa 24/7. Certificaciones, capacitaciones, mediciones y asesorías.</p>
-          <div className="flex flex-wrap gap-5">
-            <a href="#contacto">Contacto</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#blog">Blog</a>
-            <a href="#descargas">Descargas</a>
-          </div>
-        </div>
+      <div className="site-container footer-bottom">
+        <p>
+          © {new Date().getFullYear()} EDUCA 24/7. Todos los derechos
+          reservados.
+        </p>
+        <span>Seguridad · Educación · Sostenibilidad</span>
       </div>
     </footer>
   )
