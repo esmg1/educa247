@@ -837,8 +837,8 @@ export const trustTiles: TrustTile[] = [
 export const contactDetails: ContactDetail[] = [
   {
     label: 'Instagram',
-    value: '@educa_247',
-    href: 'https://www.instagram.com/educa_247/',
+    value: '@educa24_7',
+    href: 'https://www.instagram.com/educa24_7/',
   },
   {
     label: 'Facebook',

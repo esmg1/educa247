@@ -1105,6 +1105,106 @@ p {
 .contact-social a:hover {
   color: #fff;
 }
+.instagram-card {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 36px;
+  margin-top: 65px;
+  padding: 30px 36px;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--navy);
+  border-top: 4px solid var(--yellow);
+}
+.instagram-card__code {
+  text-align: center;
+}
+.instagram-qr {
+  display: block;
+  position: relative;
+  width: 190px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--green);
+  border-radius: 8px;
+}
+/* Frame the supplied code and recolor it without changing its geometry.
+   The white area surrounding the code remains intact for scanning. */
+.instagram-qr img {
+  position: absolute;
+  width: 165.5173%;
+  max-width: none;
+  height: auto;
+  left: -32.8736%;
+  top: -66.2069%;
+  filter: grayscale(1) brightness(0.6) contrast(8);
+  mix-blend-mode: screen;
+}
+.instagram-card__code > span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.instagram-card__content .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.instagram-card h3 {
+  font-size: 28px;
+  margin-top: 13px;
+}
+.instagram-card__content > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 470px;
+  margin-top: 13px;
+}
+.instagram-card__handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-weight: 800;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.instagram-card__handle:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1100px) {
+  .instagram-card {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 20px 30px;
+  }
+  .instagram-card__code {
+    grid-row: span 2;
+  }
+  .instagram-card > .button {
+    justify-self: start;
+  }
+}
+@media (max-width: 600px) {
+  .instagram-card {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+    margin-top: 40px;
+    gap: 25px;
+  }
+  .instagram-card__code {
+    grid-row: auto;
+    justify-self: center;
+  }
+  .instagram-card h3 {
+    font-size: 25px;
+  }
+  .instagram-card > .button {
+    width: 100%;
+  }
+}
 .site-footer {
   background: #f7f7f7;
   padding-top: 50px;

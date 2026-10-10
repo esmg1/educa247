@@ -1,4 +1,5 @@
-import { ArrowUpRight, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, Camera, MessageCircle } from 'lucide-react'
+import instagramQr from '../../assets/social/instagram-qr.jpeg'
 import type { ContactDetail } from '../../data/landingContent'
 import { SectionShell } from '../layout/SectionShell'
 import { Button } from '../ui/Button'
@@ -7,6 +8,9 @@ export function FinalCTASection({
 }: {
   contactDetails: ContactDetail[]
 }) {
+  const instagram = contactDetails.find(
+    (detail) => detail.label === 'Instagram',
+  )
   return (
     <SectionShell id="contacto" surface="dark">
       <div className="contact-grid">
@@ -74,6 +78,51 @@ export function FinalCTASection({
           </div>
         </div>
       </div>
+      {instagram && (
+        <aside className="instagram-card" aria-labelledby="instagram-title">
+          <div className="instagram-card__code">
+            <a
+              className="instagram-qr"
+              href={instagram.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Abrir el perfil de Instagram ${instagram.value}`}
+            >
+              <img
+                src={instagramQr}
+                alt={`Código QR de Instagram para ${instagram.value}`}
+                width={720}
+                height={1063}
+                loading="lazy"
+              />
+            </a>
+            <span>Escanea y síguenos</span>
+          </div>
+          <div className="instagram-card__content">
+            <p className="eyebrow">
+              <Camera size={17} /> Nuestra comunidad
+            </p>
+            <h3 id="instagram-title">Sigamos aprendiendo juntos.</h3>
+            <p>
+              Encuentra novedades de nuestros cursos y contenido sobre
+              seguridad, educación y sostenibilidad en Instagram.
+            </p>
+            <a
+              className="instagram-card__handle"
+              href={instagram.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {instagram.value}
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+          <Button href={instagram.href} target="_blank" rel="noreferrer">
+            Visitar Instagram
+            <ArrowUpRight size={18} />
+          </Button>
+        </aside>
+      )}
     </SectionShell>
   )
 }
