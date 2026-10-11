@@ -278,7 +278,7 @@ export const heroBanner: HeroBanner = {
   secondaryCtaHref: '#aula-virtual',
   quickLinks: [
     { label: 'Asesoría SST', href: '#asesorias' },
-    { label: 'Igualdad 2026', href: '#aula-virtual' },
+    { label: 'Igualdad Salarial', href: '#aula-virtual' },
     { label: 'Capacitación HSE', href: '#capacitaciones' },
   ],
   primaryImageSrc: igualdadLockoutImage,
@@ -507,9 +507,9 @@ export const blogSection: VisualShowcaseSectionData = {
 export const virtualCoursesSection: VirtualCoursesSectionData = {
   id: 'aula-virtual',
   eyebrow: 'Aula Virtual',
-  title: 'Aula Virtual',
+  title: 'Igualdad Salarial',
   description:
-    'Aprende a tu ritmo con programas que conectan el conocimiento con los retos del trabajo. Formación en igualdad laboral y preparación docente en un entorno digital accesible.',
+    'Fortalece una cultura de equidad en tu organización. Con Igualdad 2026, aprende a reconocer sesgos, prevenir la discriminación y aplicar criterios de remuneración más justos, a tu ritmo y en línea.',
   ctaLabel: 'Solicitar acceso',
   ctaHref: '#contacto',
   surface: 'sand',

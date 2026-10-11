@@ -29,9 +29,9 @@ export function VirtualCoursesSection({
   const course = section.featuredCourse
   const supporting = section.supportingCourse
   return (
-    <SectionShell id={section.id}>
+    <SectionShell id={section.id} className="equality-section">
       <SectionHeading
-        eyebrow="Aprendizaje que se aplica"
+        eyebrow="Programa destacado · Aula virtual"
         title={section.title}
         description={section.description}
       />

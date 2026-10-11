@@ -30,9 +30,9 @@ function App() {
       </a>
       <main id="contenido">
         <HeroSection banner={heroBanner} />
+        <VirtualCoursesSection section={virtualCoursesSection} />
         <ServicesSection services={serviceOverviewCards} />
         <ConsultingSection />
-        <VirtualCoursesSection section={virtualCoursesSection} />
         {catalogSections.map((section) => (
           <CatalogSection key={section.id} section={section} />
         ))}

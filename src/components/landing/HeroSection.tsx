@@ -5,6 +5,18 @@ import { Button } from '../ui/Button'
 export function HeroSection({ banner }: { banner: HeroBanner }) {
   return (
     <section id="inicio" className="hero-section">
+      <a href="#aula-virtual" className="featured-program">
+        <div className="site-container featured-program__inner">
+          <span className="featured-program__badge">Programa destacado</span>
+          <strong>Igualdad Salarial</strong>
+          <span className="featured-program__facts">
+            40 horas · 4 módulos · En línea
+          </span>
+          <span className="featured-program__action">
+            Conoce el programa <ArrowRight size={18} />
+          </span>
+        </div>
+      </a>
       <div className="site-container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">
